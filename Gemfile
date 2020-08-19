@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'kaminari', '~> 0.17.0'
+
 gem 'rails',        '5.1.6'
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
