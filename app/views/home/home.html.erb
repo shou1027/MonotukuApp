@@ -1,0 +1,89 @@
+<% provide(:title,"home") %>
+
+<div class="home-container">
+  <div class="home-contents">
+    <div class="home-menu home-line">
+      <div id="dropdown-click"><%= @content_name%></div>
+      <div id="dropdown-menu">
+        <div class="home-content-menu">
+          <%= link_to("/") do %>
+            <span>新着</span>
+          <% end %>
+          <%= link_to("/timeline") do %>
+            <span>タイムライン</span>
+          <% end %>
+          <%= link_to("/tag") do %>
+            <span>タグ</span>
+          <% end %>
+        </div>
+        <div class="home-original-menu">
+          <%= link_to("/") do %>
+            <span>お気に入り</span>
+          <% end %>
+          <%= link_to("/") do %>
+            <span>フォロー</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="home-main home-line">
+      <div class="home-main-container">
+        <h1><%= @content_name%></h1>
+        <ul>
+          <% @posts.each do |post| %>
+            <li class="home-content">
+              <%= link_to("/") do %>
+                <div class="home-img-container">
+                  <%= image_tag("hoge/和順商事株式会社.png")%>
+                </div>
+                <p><%= post.content %></p>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="home-side home-line">
+      <div class="home-side-container">
+        <div class="home-user-ran home-ranking">
+          <h2>ユーザーランキング</h2>
+          <ul>
+            <% for i in 1..10 %>
+              <li>
+                <div class="home-name-info">
+                  <p><%= i %></p>
+                  <a href="">これはテストですこれはテストですこれはテストです</a>
+                </div>
+                <div class="home-num-info">
+                  <div>
+                    <p><%= rand(1000) %></p>
+                    <p>posts</p>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="home-category-ran home-ranking">
+          <h2>カテゴリーランキング</h2>
+          <ul>
+            <% for i in 1..10 %>
+              <li>
+                <div class="home-name-info">
+                  <p><%= i %></p>
+                  <a href="">AAAAAAAAAAAAAAAAAAAAAAA</a>
+                </div>
+                <div class="home-num-info">
+                  <div>
+                    <p><%= rand(1000) %></p>
+                    <p>posts</p>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
