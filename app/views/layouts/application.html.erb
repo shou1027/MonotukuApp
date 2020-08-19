@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Monotuku</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,53 @@
   </head>
 
   <body>
+    <header>
+      <div class="header-container">
+        <div class="header-logo">
+          <%= link_to("モノツク","/") %>
+        </div>
+        <ul class="header-nav">
+          <li>
+            <%= link_to("投稿する","/") %>
+          </li>
+          <li>
+            <%= link_to("ユーザー一覧","/users/index") %>
+          </li>
+          <% if @current_user %>
+            <li>
+              <%= link_to(@current_user,"/users/show") %>
+            </li>
+            <li>
+              <%= link_to("ログアウト","/logout") %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to("ユーザー登録","/signup") %>
+            </li>
+            <li>
+              <%= link_to("ログイン","/login") %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </header>
+    
     <%= yield %>
+    
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <%= link_to("モノツク","/") %>
+        </div>
+        <ul class="footer-nav">
+          <li>
+            <%= link_to("ABOUT","/about") %>
+          </li>
+          <li>
+            <%= link_to("HELP","/help") %>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
