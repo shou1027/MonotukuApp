@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  def edit
+  def search
   end
 
-  def search
+  def edit
   end
 end
