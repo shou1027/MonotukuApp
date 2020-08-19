@@ -30,13 +30,13 @@
       <div class="home-main-container">
         <h1><%= @content_name%></h1>
         <ul>
-          <% for i in 1..10 %>
+          <% @posts.each do |post| %>
             <li class="home-content">
               <%= link_to("/") do %>
                 <div class="home-img-container">
                   <%= image_tag("和順商事株式会社.png")%>
                 </div>
-                <p><%= "abcde" %></p>
+                <p><%= post.content %></p>
               <% end %>
             </li>
           <% end %>
