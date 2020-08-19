@@ -1,2 +1,14 @@
-<h1>Users#login_form</h1>
-<p>Find me in app/views/users/login_form.html.erb</p>
+<div class="login-container">
+  <div class="login-contents">
+    <h1>ログイン</h1>
+    <div class="login-form">
+      <%= form_tag("/login" ) do %>
+        <p>ユーザー名</p>
+        <input class="login-input" name="name" type="text">
+        <p>パスワード</p>
+        <input class="login-input" name="password" type="password">
+        <input class="login-submit" type="submit" value="ログイン">
+      <% end %>
+    </div>
+  </div>
+</div>

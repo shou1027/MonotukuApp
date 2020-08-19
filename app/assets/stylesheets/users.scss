@@ -1,3 +1,343 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.index-contents{
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.index-line{
+  float: left;
+}
+
+.index-side{
+  width: 250px;
+}
+
+.index-side-container{
+  
+}
+
+.index-side h1{
+  margin-top: 20px;
+}
+
+.index-side h2{
+  margin-top: 40px;
+}
+
+.index-search-list{
+  overflow: hidden;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+}
+
+.index-search-list li{
+  width: 20%;
+  height: 30px;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  float: left;
+}
+
+.index-search-list a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: blue;
+}
+
+.index-search-list a:hover{
+  text-decoration: underline;
+}
+
+.index-main{
+  width: calc(100% - 250px);
+  padding-left: 20px;
+}
+
+.index-main-container{
+  
+}
+
+.index-user-list li{
+  overflow: hidden;
+  padding: 10px;
+  border-bottom: 1px solid #aaa;
+}
+
+.index-user-list img{
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.index-user-list img,
+.index-user-name
+{
+  float: left;
+}
+
+.index-user-name{
+  width: calc(100% - 50px);
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.index-user-name a{
+  color: blue;
+}
+
+.index-user-name a:hover{
+  text-decoration: underline;
+}
+
+.index-user-list nav{
+    margin:20px 0;
+    text-align: center;
+  }
+
+/**********show**********/
+
+.user-contents{
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.user-line{
+  float: left;
+}
+
+.user-side{
+  width: 400px;
+}
+
+.user-side-container{
+  width: 100%;
+  background-color: white;
+  padding: 30px 20px 30px 20px;
+}
+
+.user-view{
+  text-align: center;
+}
+
+.user-view img{
+
+}
+
+.user-view p{
+  margin-top: 10px;
+}
+
+.user-side-container img{
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+.user-num-info{
+  padding: 40px 10px 0 10px;
+  overflow: hidden;
+}
+
+.user-num{
+  width: 25%;
+  text-align: center;
+  float: left;
+}
+
+.user-side-container a{
+  width: 100%;
+  display: block;
+  background-color: #77f;
+  color: white;
+  margin-top: 30px;
+  padding: 3px 0;
+  text-align: center;
+}
+
+.user-side-container a:hover{
+  background-color: #55f;
+}
+
+.user-main{
+  width: calc(100% - 400px);
+  padding-left: 20px;
+}
+
+.user-main-container{
+  height: 100%;
+  background-color: white;
+  padding: 20px 0px;
+}
+
+.user-main-container h1{
+  padding-left: 20px;
+}
+
+.user-main-container ul{
+  overflow: hidden;
+}
+
+.user-main-container li{
+  width: 50%;
+  padding: 15px;
+  float: left;
+}
+
+.user-image{
+  width: 100%;
+	padding-bottom: 56.25%;
+	position: relative;
+}
+
+.user-image img{
+  width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	display: block;
+  position: absolute;
+  object-fit: cover;
+}
+
+.user-main-container p{
+  margin-top: 10px;
+  color: black;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/**********login**********/
+
+.login-contents{
+  margin: 100px auto;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+}
+
+.login-form{
+  margin-top: 50px;
+}
+
+.login-input{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.login-submit{
+  background-color: green;
+  border: none;
+  font-size: 16px;
+  padding: 5px 20px;
+  margin: 0 auto;
+  color: white;
+  display: block;
+}
+
+.login-submit:hover{
+  background-color: darkgreen;
+}
+
+/**********signup**********/
+
+.signup-contents{
+  margin: 100px auto;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+}
+
+.signup-form{
+  margin-top: 50px;
+}
+
+.signup-input{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.signup-submit{
+  background-color: green;
+  border: none;
+  font-size: 16px;
+  padding: 5px 20px;
+  margin: 0 auto;
+  color: white;
+  display: block;
+}
+
+.signup-submit:hover{
+  background-color: darkgreen;
+}
+
+@media(max-width: 1100px)
+{
+  /**********show**********/
+  
+  .user-main-container li{
+    width: 50%;
+  }
+}
+
+@media(max-width: 860px)
+{
+  /**********show**********/
+  
+  .user-line{
+    float: none;
+  }
+
+  .user-side{
+    width: 100%;
+  }
+
+  .user-main{
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .user-main-container li{
+    width: 50%;
+  }
+}
+
+
+@media(max-width: 768px)
+{
+  .index-line{
+    float: none;
+  }
+
+  .index-side{
+    width: 100%;
+  }
+
+  .index-main{
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+@media(max-width: 680px)
+{
+  /**********show**********/
+  
+  .user-main-container li{
+    padding: 15px 5px;
+  }
+}

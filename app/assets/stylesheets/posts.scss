@@ -1,3 +1,165 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.search-contents{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.search-form{
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.search-form input[type="text"]{
+  width: calc(100% - 85px);
+  height: 30px;
+  font-size: 16px;
+  display: block;
+  float: left;
+}
+
+.search-form input[type="submit"]{
+  width: 80px;
+  height: 30px;
+  margin-left: 5px;
+  display: block;
+  float: left;
+}
+
+.search-main{
+  margin-top: 30px;
+}
+
+.search-main li{
+  float: left;
+  width: 33.3%;
+  padding: 10px;
+}
+
+.search-main a{
+  color: black;
+}
+
+.search-main a:hover{
+  text-decoration: underline;
+}
+
+.search-image{
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.search-image img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit:contain;
+}
+
+.search-main p{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.4em;
+  margin-top: 10px;
+  line-height: 1.2em;
+}
+
+/**********edit**********/
+
+.post-contents{
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.post-main-image-container{
+  margin: 20px auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.post-main-image{
+  width: 100%;
+  padding-bottom: 56.25%;
+	position: relative;
+}
+
+.post-main-image img{
+  width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+  position: absolute;
+  object-fit: contain;
+  border: 1px solid lightgray;
+}
+
+#post-image-select{
+  width: 100px;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+}
+
+#post-title{
+  width: 100%;
+  height: 50px;
+  font-size: 30px;
+}
+
+#post-tag{
+  width: 100%;
+  height: 30px;
+  margin-top: 20px;
+}
+
+#post-file{
+  display: none;
+}
+
+.post-editor{
+  width: 100%;
+}
+
+.post-contents textarea{
+  width: 100%;
+  height: 500px;
+  resize: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 1.2em;
+  padding: 5px;
+  display: block;
+}
+
+.post-contents input[type="submit"]{
+  margin: 10px 10px 10px auto;
+  display: block;
+  width: 80px;
+  height: 30px;
+  background-color: green;
+  border: none;
+  color: white;
+}
+
+.post-contents input[type="submit"]:hover{
+  background-color: darkgreen;
+}
+
+@media(max-width: 1000px){
+  .search-main li{
+    width: 50%;
+  }
+}
+
+@media(max-width: 480px){
+  .search-main li{
+    width: 100%;
+  }
+}

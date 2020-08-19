@@ -1,2 +1,16 @@
-<h1>Users#signup</h1>
-<p>Find me in app/views/users/signup.html.erb</p>
+<div class="signup-container">
+  <div class="signup-contents">
+    <h1>ユーザー登録</h1>
+    <div class="signup-form">
+      <%= form_tag("/new") do %>
+        <p>ユーザー名</p>
+        <input class="signup-input" name="name" type="text">
+        <p>パスワード</p>
+        <input class="signup-input" name="password" type="password">
+        <p>パスワード(確認)</p>
+        <input class="signup-input" name="confirm" type="password">
+        <input class="signup-submit" type="submit" value="登録">
+      <% end %>
+    </div>
+  </div>
+</div>
