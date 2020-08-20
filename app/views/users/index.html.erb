@@ -7,9 +7,9 @@
         <h1>ユーザー一覧</h1>
         <h2>索引</h2>
         <ul class="index-search-list">
-          <% (("A".."Z").to_a.concat(("0".."9").to_a).append("_")).each do |str| %>
+          <% (("A".."Z").to_a.concat(("0".."9").to_a).append("_")).each do |word| %>
             <li>
-              <%= link_to(str,"/#{str}") %>
+              <%= link_to(word,"/users/search/#{word}") %>
             </li>
           <% end %>
         </ul>
@@ -18,17 +18,17 @@
     <div class="index-main index-line">
       <div class="index-main-container">
         <ul class="index-user-list">
-          <% for i in 1..10 %>
+          <% @users.each do |user| %>
             <li>
               <%= link_to("/") do %>
-                <img src="./shou.png">
+                <%= image_tag("/user_image/#{user.image_name}") %>
               <% end %>
               <div class="index-user-name">
-                <%= link_to("aaaaaaaaaaaa","/") %>
+                <%= link_to(user.name,"/") %>
               </div>
             </li>
           <% end %>
-          <%= paginate @user %>
+          <%= paginate @users %>
         </ul>
       </div>
     </div>

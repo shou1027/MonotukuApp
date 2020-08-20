@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+100.times do |n|
+  User.create(name: (0...12).map{ ('A'..'Z').to_a[rand(26)] }.join, password: (0...8).map{ ('A'..'Z').to_a[rand(26)] }.join, image_name: "default.png")
+end

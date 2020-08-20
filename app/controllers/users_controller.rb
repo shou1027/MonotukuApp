@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
-  before_action :allow_logged_out, {only: [:signup]}
+  before_action :allow_logged_in, {only: [:show]}
+  before_action :allow_logged_out, {only: [:signup, :create]}
+  before_action :allow_proper_user, {only: [:show]}
   
   def show
   end
 
   def index
-    @user = User.page(params[:page]).per(10)
+    @users = User.page(params[:page]).per(10)
   end
   
   def signup
@@ -29,7 +31,7 @@ class UsersController < ApplicationController
     redirect_to("/about")
   end
   
-  def new
+  def create
     @user = User.new(name: params[:name],password: params[:password])
     
     if @user.save

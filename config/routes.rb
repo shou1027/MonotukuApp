@@ -1,21 +1,15 @@
 Rails.application.routes.draw do
-  get 'posts/index'
-
-  get 'posts/edit'
-
-  get 'posts/post'
-
-  get 'posts/search'
-
-  get 'users/show'
-
-  get 'users/index'
+  get "posts/edit" => "posts#edit"
+  get "posts/search/" => "posts#search"
   
   get "signup" => "users#signup"
   get "login" => "users#login_form"
   post "login" => "users#login"
   get "logout" => "users#logout"
-  post "new" => "users#new"
+  get 'users' => "users#index"
+  get "users/search/:word" => "users#index"
+  get "users/:user_name" => "users#show"
+  post "users/new" => "users#create"
   
   get "/" => "home#home"
   get "timeline" => "home#timeline"

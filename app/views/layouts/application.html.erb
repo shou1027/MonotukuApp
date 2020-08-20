@@ -19,14 +19,14 @@
         </div>
         <ul class="header-nav">
           <li>
-            <%= link_to("投稿する","/") %>
+            <%= link_to("投稿する","/posts/new") %>
           </li>
           <li>
-            <%= link_to("ユーザー一覧","/users/index") %>
+            <%= link_to("ユーザー一覧","/users") %>
           </li>
-          <% if @current_user %>
+          <% if @login_user %>
             <li>
-              <%= link_to(@current_user,"/users/show") %>
+              <%= link_to(@login_user,"/users/#{@login_user}") %>
             </li>
             <li>
               <%= link_to("ログアウト","/logout") %>
