@@ -18,13 +18,13 @@
     <div class="index-main index-line">
       <div class="index-main-container">
         <ul class="index-user-list">
-          <% @user.each do |u| %>
+          <% for i in 1..10 %>
             <li>
               <%= link_to("/") do %>
                 <img src="./shou.png">
               <% end %>
               <div class="index-user-name">
-                <%= link_to(u.name + "  " + u.category,"/") %>
+                <%= link_to("aaaaaaaaaaaa","/") %>
               </div>
             </li>
           <% end %>

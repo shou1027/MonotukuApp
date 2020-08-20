@@ -26,76 +26,21 @@
             <p>フォロワー</p>
           </div>
         </div>
-        <a href="">アカウントを編集する</a>
+        <%= link_to("アカウントを編集する","/") %>
       </div>
     </div>
     <div class="user-main user-line">
       <div class="user-main-container">
         <h1>投稿作品</h1>
         <ul>
+          <% for i in 1..10 %>
           <li>
-            <a href="">
+            <%= link_to("/") do %>
               <div class="user-image">
                 <img src="./shou.png">
               </div>
-              <p href="">テストですテストですテストですテストですテストですテストですテストですテストですテストですテストです</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="user-image">
-                <img src="./shou.png">
-              </div>
-              <p href="">テストですテストですテストですテストですテストですテストですテストですテストですテストですテストです</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="user-image">
-                <img src="./shou.png">
-              </div>
-              <p href="">テストですテストですテストですテストですテストですテストですテストですテストですテストですテストです</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="user-image">
-                <img src="./shou.png">
-              </div>
-              <p href="">テストですテストですテストですテストですテストですテストですテストですテストですテストですテストです</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="user-image">
-                <img src="./shou.png">
-              </div>
-              <p href="">テストですテストですテストですテストですテストですテストですテストですテストですテストですテストです</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="user-image">
-                <img src="./shou.png">
-              </div>
-              <p href="">テストですテストですテストですテストですテストですテストですテストですテストですテストですテストです</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="user-image">
-                <img src="./shou.png">
-              </div>
-              <p href="">テストですテストですテストですテストですテストですテストですテストですテストですテストですテストです</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="user-image">
-                <img src="./shou.png">
-              </div>
-              <p href="">テストですテストですテストですテストですテストですテストですテストですテストですテストですテストです</p>
-            </a>
+              <p>テストですテストですテストですテストですテストですテストですテストですテストですテストですテストです</p>
+            <% end %>
           </li>
         </ul>
       </div>
