@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "posts/new" => "posts#new"
   get "posts/edit" => "posts#edit"
   get "posts/search/" => "posts#search"
   
@@ -7,9 +8,11 @@ Rails.application.routes.draw do
   post "login" => "users#login"
   get "logout" => "users#logout"
   get 'users' => "users#index"
-  get "users/search/:word" => "users#index"
   get "users/:user_name" => "users#show"
   post "users/new" => "users#create"
+  get "users/search/:word" => "users#index"
+  get "users/:user_name/edit" => "users#edit"
+  post "users/:user_name/destroy" => "users#destroy"
   
   get "/" => "home#home"
   get "timeline" => "home#timeline"

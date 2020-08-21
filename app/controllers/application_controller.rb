@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     end
     
     def set_current_user
-      @current_user = params[:user_name]
+      @current_user = User.find_by(name: params[:user_name])
     end
     
     def allow_logged_in
@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     end
     
     def allow_proper_user
-      if @login_user != @current_user
+      if @login_user != @current_user.name
         redirect_to("/")
       end
     end

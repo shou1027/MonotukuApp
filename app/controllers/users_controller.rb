@@ -41,4 +41,15 @@ class UsersController < ApplicationController
       render("users/signup")
     end
   end
+  
+  def destroy
+    @current_user.destroy
+    session[:user_name] = nil
+    
+    redirect_to("/about")
+  end
+  
+  def edit
+    
+  end
 end
