@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post "users/new" => "users#create"
   get "users/search/:word" => "users#index"
   get "users/:user_name/edit" => "users#edit"
+  post "users/:user_name/update" => "users#update"
   post "users/:user_name/destroy" => "users#destroy"
   
   get "/" => "home#home"

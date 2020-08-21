@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(name: params[:name],password: params[:password])
+    @user = User.new(name: params[:name],password: params[:password], image_name: "default.jpg")
     
     if @user.save
       session[:user_name] = @user.name
@@ -40,6 +40,19 @@ class UsersController < ApplicationController
     else
       render("users/signup")
     end
+  end
+  
+  def update
+    user_image = params[:user_image]
+    if user_image
+      File.delete("public/user_images/#{@current_user.image_name}")
+      time = DateTime.now
+      @current_user.image_name = "#{@current_user.name + format("%02d%02d%02d",time.hour.to_s,time.minute.to_s,time.second.to_s)}.jpg"
+      @current_user.save
+      File.binwrite("public/user_images/#{@current_user.image_name}",user_image.read)
+    end
+    
+    redirect_to("/users/#{@current_user.name}")
   end
   
   def destroy
