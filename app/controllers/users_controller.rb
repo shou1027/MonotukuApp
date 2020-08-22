@@ -1,16 +1,23 @@
 class UsersController < ApplicationController
-  before_action :allow_logged_in, {only: [:show]}
-  before_action :allow_logged_out, {only: [:signup, :create]}
-  before_action :allow_proper_user, {only: [:show]}
+  before_action :allow_logged_in, {only: [:logout, :edit, :update, :destroy]}
+  before_action :allow_logged_out, {only: [:login_form, :login, :signup, :create]}
+  before_action :allow_proper_user, {only: [:edit, :update, :destroy]}
   
   def show
+    target_user
   end
 
   def index
-    @users = User.page(params[:page]).per(10)
-  end
-  
-  def signup
+    word = params[:word]
+    if word
+      if word == "_"
+        @users = User.where("name LIKE ?","\\_%").order(name: :asc).page(params[:page]).per(10)
+      else
+        @users = User.where("name LIKE ?","#{word}%").order(name: :asc).page(params[:page]).per(10)
+      end
+    else
+      @users = User.page(params[:page]).per(10)
+    end
   end
   
   def login_form
@@ -31,6 +38,9 @@ class UsersController < ApplicationController
     redirect_to("/about")
   end
   
+  def signup
+  end
+  
   def create
     @user = User.new(name: params[:name],password: params[:password], image_name: "default.jpg")
     
@@ -42,27 +52,40 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+  end
+  
   def update
     user_image = params[:user_image]
     if user_image
-      File.delete("public/user_images/#{@current_user.image_name}")
+      if (@target_user.image_name != "default.jpg") & File.exist?("public/user_images/#{@target_user.image_name}")
+        File.delete("public/user_images/#{@target_user.image_name}")
+      end
       time = DateTime.now
-      @current_user.image_name = "#{@current_user.name + format("%02d%02d%02d",time.hour.to_s,time.minute.to_s,time.second.to_s)}.jpg"
-      @current_user.save
-      File.binwrite("public/user_images/#{@current_user.image_name}",user_image.read)
+      @target_user.image_name = "#{@target_user.name + format("%02d%02d%02d",time.hour.to_s,time.minute.to_s,time.second.to_s)}.jpg"
     end
     
-    redirect_to("/users/#{@current_user.name}")
+    @target_user.tags = params[:tags]
+    
+    if @target_user.save
+      if user_image
+        File.binwrite("public/user_images/#{@target_user.image_name}",user_image.read)
+      end
+      redirect_to("/users/#{@target_user.name}")
+    elsif
+      render("users/edit")
+    end
+    
   end
   
   def destroy
-    @current_user.destroy
+    if (@target_user.image_name != "default.jpg") & File.exist?("public/user_images/#{@target_user.image_name}")
+      File.delete("public/user_images/#{@target_user.image_name}")
+    end
+    @target_user.destroy
     session[:user_name] = nil
     
     redirect_to("/about")
   end
   
-  def edit
-    
-  end
 end

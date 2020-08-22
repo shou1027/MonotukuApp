@@ -5,17 +5,13 @@
     <div class="user-side user-line">
       <div class="user-side-container">
         <div class="user-view">
-          <%= image_tag("/user_images/#{@current_user.image_name}") %>
-          <p>shou1027</p>
+          <%= image_tag("/user_images/#{@target_user.image_name}") %>
+          <p><%= @target_user.name %></p>
         </div>
         <div class="user-num-info">
           <div class="user-num">
             <p>0</p>
             <p>投稿</p>
-          </div>
-          <div class="user-num">
-            <p>0</p>
-            <p>いいね</p>
           </div>
           <div class="user-num">
             <p>0</p>
@@ -26,7 +22,9 @@
             <p>フォロワー</p>
           </div>
         </div>
-        <%= link_to("アカウントを編集する","/users/#{@login_user}/edit") %>
+        <% if @current_user == @target_user %>
+          <%= link_to("アカウントを編集する","/users/#{@target_user.name}/edit") %>
+        <% end %>
       </div>
     </div>
     <div class="user-main user-line">
