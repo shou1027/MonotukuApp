@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   
   def show
     target_user
+    @posts = @target_user.posts.page(params[:page]).per(10)
   end
 
   def index
@@ -71,8 +72,9 @@ class UsersController < ApplicationController
       if user_image
         File.binwrite("public/user_images/#{@target_user.image_name}",user_image.read)
       end
+      
       redirect_to("/users/#{@target_user.name}")
-    elsif
+    else
       render("users/edit")
     end
     

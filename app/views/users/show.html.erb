@@ -31,17 +31,18 @@
       <div class="user-main-container">
         <h1>投稿作品</h1>
         <ul>
-          <% for i in 1..10 %>
+          <% @posts.each do |post| %>
             <li>
               <%= link_to("/") do %>
                 <div class="user-image">
-                  <img src="./shou.png">
+                  <%= image_tag("/post_images/#{post.image_name}") %>
                 </div>
-                <p>テストですテストですテストですテストですテストですテストですテストですテストですテストですテストです</p>
+                <p><%= post.title %></p>
               <% end %>
             </li>
           <% end %>
         </ul>
+        <%= paginate @posts %>
       </div>
     </div>
   </div>

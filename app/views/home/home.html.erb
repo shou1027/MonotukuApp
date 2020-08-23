@@ -34,13 +34,14 @@
             <li class="home-content">
               <%= link_to("/") do %>
                 <div class="home-img-container">
-                  <%= image_tag("hoge/和順商事株式会社.png")%>
+                  <%= image_tag("/post_images/#{post.image_name}") %>
                 </div>
-                <p><%= post.content %></p>
+                <p><%= post.title %></p>
               <% end %>
             </li>
           <% end %>
         </ul>
+        <%= paginate @posts %>
       </div>
     </div>
     <div class="home-side home-line">
@@ -52,7 +53,7 @@
               <li>
                 <div class="home-name-info">
                   <p><%= i %></p>
-                  <%= link_to("これはテストですこれはテストですこれはテストです","/") %>
+                  <%= link_to("テストですテストですテストですテストですテストですテストです","/") %>
                 </div>
                 <div class="home-num-info">
                   <div>

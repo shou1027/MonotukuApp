@@ -4,18 +4,18 @@ class HomeController < ApplicationController
 
   def home
     @content_name = "新着"
-    @posts = Post.limit(10).order(created_at: :desc)
+    @posts = Post.page(params[:page]).per(30)
   end
   
   def timeline
     @content_name = "タイムライン"
-    @posts = Post.limit(10).order(created_at: :asc)
+    @posts = Post.page(params[:page]).per(30)
     render("home/home")
   end
   
   def tag
     @content_name = "タグ"
-    @posts = Post.limit(10).order(created_at: :desc)
+    @posts = Post.page(params[:page]).per(30)
     render("home/home")
   end
 

@@ -97,7 +97,7 @@
 }
 
 .home-content p{
-  font-size: 12px;
+  font-size: 16px;
   margin: 10px 0 0 0;
   line-height: 1.2em;
   color: black;
@@ -106,6 +106,12 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   height: 2.4em;
+  word-wrap: break-word;
+}
+
+.home-main-container nav{
+  margin:20px 0;
+  text-align: center;
 }
 
 .home-side{

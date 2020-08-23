@@ -2,20 +2,20 @@
 
 <div class="post-container">
   <div class="post-contents">
-    <form action="" autocomplete="off">
-      <input id="post-title" type="text" placeholder="タイトル">
+    <%= form_tag("/posts/new", autocomplete: "off", multipart: true) do %>
+      <input id="post-title" name="post_title" type="text" placeholder="タイトル" value="<%= @post.title %>">
       <div class="post-main-image-container">
         <div class="post-main-image">
-          <img id="post-image" src="./和順商事株式会社.png">
+          <img id="post-image" src="<%=@post_image%>">
         </div>
       </div>
-      <input id="post-file" type="file">
+      <input id="post-image-file" name="post_image" type="file" value="<%= @post_image %>">
       <input id="post-image-select" type="button" value="画像を選択">
       <div class="post-text">
-        <input id="post-tag" type="text" placeholder="タグ　例:電子回路 組み込み">
-        <textarea id="hoge" placeholder="本文"></textarea>
+        <input id="post-tag" name="post_tag" type="text" placeholder="タグ　例:電子回路 組み込み">
+        <textarea id="hoge" name="post_content" placeholder="本文"></textarea>
       </div>
       <input type="submit">
-    </form>
+    <% end %>
   </div>
 </div>

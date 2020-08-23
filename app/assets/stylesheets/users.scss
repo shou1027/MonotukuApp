@@ -95,9 +95,9 @@
 }
 
 .index-user-list nav{
-    margin:20px 0;
-    text-align: center;
-  }
+  margin:20px 0;
+  text-align: center;
+}
 
 /**********show**********/
 
@@ -206,7 +206,7 @@
 	top: 0;
 	display: block;
   position: absolute;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .user-main-container p{
@@ -217,6 +217,11 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.user-main-container nav{
+  margin:20px 0;
+  text-align: center;
 }
 
 /**********login**********/
