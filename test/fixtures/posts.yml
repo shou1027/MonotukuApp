@@ -3,9 +3,9 @@
 one:
   content: MyText
   image_name: MyString
-  user_name: MyString
+  user: one
 
 two:
   content: MyText
   image_name: MyString
-  user_name: MyString
+  user: two
