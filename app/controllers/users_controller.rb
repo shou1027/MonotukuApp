@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(name: params[:name],password: params[:password], image_name: "default.jpg")
     
-    if @user.save
+    if (params[:confirm] == params[:password]) && @user.save
       session[:user_name] = @user.name
       redirect_to("/")
     else

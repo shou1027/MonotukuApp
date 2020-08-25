@@ -1,0 +1,18 @@
+<div class="work-container">
+  <div class="work-contents">
+    <h1><%= @post.title %></h1>
+    <div class="work-img-container">
+      <div class="work-img-content">
+        <%= image_tag("/post_images/#{@post.image_name}") %>
+      </div>
+    </div>
+    <div class="work-tags">
+      <% @tags.each do |tag| %>
+        <%= link_to("/") do %>
+          <span><%= tag %></span>
+        <% end %>
+      <% end %>
+    </div>
+    <p class="work-content"><%= @post.content %></p>
+  </div>
+</div>

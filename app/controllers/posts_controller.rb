@@ -38,18 +38,21 @@ class PostsController < ApplicationController
       @post.image_name = @post_image.blank? ? "" : "#{@current_user.name + format("%04d%02d%02d%02d%02d%02d",time.year,time.month,time.day,time.hour,time.minute,time.second)}.jpg"
     end
     
-    if @post.update(title: params[:post_title], tags: params[:post_tags], content: params[:post_content])
+    if @post.update(title: params[:post_title], tags: params[:post_tags].strip.gsub(/[\s　]+/," "), content: params[:post_content])
       if @post_image
         File.binwrite("public/post_images/#{@post.image_name}", @post_image.read)
       end
       redirect_to("/")
     else
-      @submit = "/posts/#{@current_user}/#{@post.id}/update"
+      @submit = "/posts/#{@target_user.name}/#{@post.id}/update"
       render("posts/new")
     end
   end
   
   def show
+    target_user
+    @post = @target_user.posts.find_by(id: params[:id])
+    @tags = @post.tags.split(/\s/)
   end
   
   def destroy

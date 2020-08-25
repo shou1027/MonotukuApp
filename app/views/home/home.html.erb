@@ -32,7 +32,7 @@
         <ul>
           <% @posts.each do |post| %>
             <li class="home-content">
-              <%= link_to("/") do %>
+              <%= link_to("/posts/#{post.user.name}/#{post.id}") do %>
                 <div class="home-img-container">
                   <%= image_tag("/post_images/#{post.image_name}") %>
                 </div>
