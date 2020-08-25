@@ -5,7 +5,9 @@ class UsersController < ApplicationController
   
   def show
     target_user
-    @posts = @target_user.posts.page(params[:page]).per(10)
+    posts = @target_user.posts
+    @posts_count = posts.count
+    @posts = posts.page(params[:page]).per(10)
   end
 
   def index

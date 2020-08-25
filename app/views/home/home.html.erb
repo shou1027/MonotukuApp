@@ -3,7 +3,7 @@
 <div class="home-container">
   <div class="home-contents">
     <div class="home-menu home-line">
-      <div id="dropdown-click"><%= @content_name%></div>
+      <div id="dropdown-click"><%= @content_name %></div>
       <div id="dropdown-menu">
         <div class="home-content-menu">
           <%= link_to("/") do %>
@@ -28,7 +28,7 @@
     </div>
     <div class="home-main home-line">
       <div class="home-main-container">
-        <h1><%= @content_name%></h1>
+        <h1><%= @content_name %></h1>
         <ul>
           <% @posts.each do |post| %>
             <li class="home-content">

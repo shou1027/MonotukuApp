@@ -15,7 +15,7 @@
 }
 
 #dropdown-click{
-  cursor: default;
+  cursor: pointer;
   border: 1px solid black;
   border-radius: 10px;
   text-align: center;
@@ -94,11 +94,13 @@
 	top: 0;
   position: absolute;
   object-fit: contain;
+  border: 1px solid #ddd;
 }
 
 .home-content p{
   font-size: 16px;
-  margin: 10px 0 0 0;
+  margin: 10px auto 0 auto;
+  width: 80%;
   line-height: 1.2em;
   color: black;
   display: -webkit-box;
@@ -243,6 +245,7 @@
     width: 100%;
     display: none;
     background-color: white;
+    border: 1px solid #aaa;
   }
 
   .home-main{

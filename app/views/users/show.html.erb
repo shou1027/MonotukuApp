@@ -10,7 +10,7 @@
         </div>
         <div class="user-num-info">
           <div class="user-num">
-            <p>0</p>
+            <p><%= @posts_count %></p>
             <p>投稿</p>
           </div>
           <div class="user-num">
@@ -39,6 +39,10 @@
                 </div>
                 <p><%= post.title %></p>
               <% end %>
+              <div class="user-operation">
+                <%= link_to("削除","/posts/#{@target_user.name}/#{post.id}/destroy",method: :post,class: "user-delete user-link") %>
+                <%= link_to("編集","/posts/#{@target_user.name}/#{post.id}/edit",class: "user-edit user-link") %>
+              </div>
             </li>
           <% end %>
         </ul>

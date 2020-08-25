@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   get "posts/new" => "posts#new"
   post "posts/new" => "posts#create"
-  get "posts/edit" => "posts#edit"
-  get "posts/search/" => "posts#search"
+  get "posts/search/:word" => "posts#search"
+  get "posts/:user_name/:id" => "posts#show"
+  get "posts/:user_name/:id/edit" => "posts#edit"
+  post "posts/:user_name/:id/update" => "posts#update"
+  post "posts/:user_name/:id/destroy" => "posts#destroy"
   
   get "signup" => "users#signup"
   get "login" => "users#login_form"

@@ -2,18 +2,18 @@
 
 <div class="post-container">
   <div class="post-contents">
-    <%= form_tag("/posts/new", autocomplete: "off", multipart: true) do %>
+    <%= form_tag(@submit, autocomplete: "off", multipart: true) do %>
       <input id="post-title" name="post_title" type="text" placeholder="タイトル" value="<%= @post.title %>">
       <div class="post-main-image-container">
         <div class="post-main-image">
-          <img id="post-image" src="<%=@post_image%>">
+          <img id="post-image" src="<%= "/post_images/#{@post.image_name}" %>">
         </div>
       </div>
-      <input id="post-image-file" name="post_image" type="file" value="<%= @post_image %>">
+      <input id="post-image-file" name="post_image" type="file">
       <input id="post-image-select" type="button" value="画像を選択">
       <div class="post-text">
-        <input id="post-tag" name="post_tag" type="text" placeholder="タグ　例:電子回路 組み込み">
-        <textarea id="hoge" name="post_content" placeholder="本文"></textarea>
+        <input id="post-tag" name="post_tags" type="text" placeholder="タグ　例:電子回路 組み込み" value="<%= @post.tags %>">
+        <textarea id="hoge" name="post_content" placeholder="本文"><%= @post.content %></textarea>
       </div>
       <input type="submit">
     <% end %>

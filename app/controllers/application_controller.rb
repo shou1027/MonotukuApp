@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     
     def allow_logged_in
       if !@current_user
-        redirect_to("/about")
+        redirect_to("/login")
       end
     end
     

@@ -207,16 +207,49 @@
 	display: block;
   position: absolute;
   object-fit: contain;
+  border: 1px solid #ddd;
 }
 
 .user-main-container p{
-  margin-top: 10px;
+  margin: 10px auto 0 auto;
+  width: 80%;
+  height: 2.4em;
   color: black;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.2em;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  word-wrap: break-word;
+}
+
+.user-operation{
+  margin-top: 5px;
+}
+
+.user-link{
+  color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  float: right;
+}
+
+.user-edit{
+  background-color: green;
+}
+
+.user-edit:hover{
+  background-color: darkgreen;
+}
+
+.user-delete{
+  background-color: red;
+  margin-left: 5px;
+}
+
+.user-delete:hover{
+  background-color: darkred;
 }
 
 .user-main-container nav{
