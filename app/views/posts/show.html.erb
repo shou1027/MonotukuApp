@@ -1,5 +1,6 @@
 <div class="work-container">
   <div class="work-contents">
+    <p><%= link_to(@user.name, "/users/#{@user.name}", class: "work-user-name") %></p>
     <h1><%= @post.title %></h1>
     <div class="work-img-container">
       <div class="work-img-content">
@@ -8,11 +9,15 @@
     </div>
     <div class="work-tags">
       <% @tags.each do |tag| %>
-        <%= link_to("/") do %>
+        <%= link_to("/posts/search?word=#{tag}") do %>
           <span><%= tag %></span>
         <% end %>
       <% end %>
     </div>
-    <p class="work-content"><%= @post.content %></p>
+    <div class="work-content">
+      <% @post_contents.each do |content| %>
+        <%= content %><br/>
+      <% end %>
+    </div>
   </div>
 </div>

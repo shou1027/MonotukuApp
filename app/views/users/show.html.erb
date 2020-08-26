@@ -24,6 +24,8 @@
         </div>
         <% if @current_user == @target_user %>
           <%= link_to("アカウントを編集する","/users/#{@target_user.name}/edit") %>
+        <% else %>
+          <%= link_to("フォローする","/users/#{@target_user.name}/follow") %>
         <% end %>
       </div>
     </div>
@@ -33,7 +35,7 @@
         <ul>
           <% @posts.each do |post| %>
             <li>
-              <%= link_to("/") do %>
+              <%= link_to("/posts/#{@target_user.name}/#{post.id}", class: "user-post-link") do %>
                 <div class="user-image">
                   <%= image_tag("/post_images/#{post.image_name}") %>
                 </div>

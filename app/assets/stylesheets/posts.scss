@@ -1,18 +1,18 @@
 .search-contents{
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 0 20px;
 }
 
 .search-form{
-  padding: 0 10px;
+  padding: 0 0px;
   overflow: hidden;
 }
 
 .search-form input[type="text"]{
   width: calc(100% - 85px);
   height: 30px;
-  font-size: 16px;
+  font-size: 18px;
   display: block;
   float: left;
 }
@@ -27,6 +27,7 @@
 
 .search-main{
   margin-top: 30px;
+  overflow: hidden;
 }
 
 .search-main li{
@@ -48,6 +49,7 @@
   height: 0;
   padding-bottom: 56.25%;
   position: relative;
+  border: 1px solid lightgray;
 }
 
 .search-image img{
@@ -68,9 +70,15 @@
   height: 2.4em;
   margin-top: 10px;
   line-height: 1.2em;
+  word-wrap: break-word;
 }
 
-/**********edit**********/
+.search-contents nav{
+  margin:20px 0;
+  text-align: center;
+}
+
+/**********new**********/
 
 .post-contents{
   width: 100%;
@@ -117,6 +125,7 @@
   width: 100%;
   height: 30px;
   margin-top: 20px;
+  font-size: 18px;
 }
 
 #post-image-file{
@@ -132,7 +141,7 @@
   height: 500px;
   resize: none;
   outline: none;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.2em;
   padding: 5px;
   display: block;
@@ -161,9 +170,18 @@
   background-color: white;
 }
 
+.work-user-name{
+  color: blue;
+}
+
+.work-user-name:hover{
+  text-decoration: underline;
+}
+
 .work-contents h1{
   word-wrap: break-word;
   line-height: 1.2em;
+  margin-top: 10px;
 }
 
 .work-img-container{
@@ -186,13 +204,13 @@
   border: 1px solid #ddd;
 }
 
-.work-contents a{
-  color: #ddd;
-}
-
 .work-tags{
   margin-top: 10px;
   overflow: hidden;
+}
+
+.work-tags a{
+  color: #ddd;
 }
 
 .work-tags span{

@@ -87,6 +87,14 @@
 	position: relative;
 }
 
+.home-content a{
+  color: black;
+}
+
+.home-content a:hover{
+  text-decoration: underline;
+}
+
 .home-content img{
   width: 100%;
 	height: 100%;

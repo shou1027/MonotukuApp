@@ -9,7 +9,7 @@
         <ul class="index-search-list">
           <% (("A".."Z").to_a.concat(("0".."9").to_a).append("_")).each do |word| %>
             <li>
-              <%= link_to(word,"/users/search/#{word}") %>
+              <%= link_to(word,"/users/search?word=#{word}") %>
             </li>
           <% end %>
         </ul>

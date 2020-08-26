@@ -3,94 +3,30 @@
 <div class="search-container">
   <div class="search-contents">
     <div class="search-form">
-      <form action="">
-        <input type="text">
-        <input type="submit">
+      <form action="/posts/search" autocomplete="off">
+        <input type="text" name="word" value="<%= @word %>">
+        <input type="submit" value="検索">
       </form>
     </div>
+    <% if @search_count > 0 %>
+      <p><%= @search_count %>件の記事が見つかりました</p>
+    <% else %>
+      <p>お探しの記事は見つかりませんでした</p>
+    <% end %>
     <div class="search-main">
       <ul>
-        <li>
-          <a href="">
-            <div class="search-image">
-              <img id="hoge" src="./003.JPG">
-            </div>
-            <p>テストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストですテストです</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div class="search-image">
-              <img src="./和順商事株式会社.png">
-            </div>
-            <p>テストですテストですテストです</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div class="search-image">
-              <img src="./和順商事株式会社.png">
-            </div>
-            <p>テストですテストですテストです</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div class="search-image">
-              <img src="./shou.png">
-            </div>
-            <p>テストですテストですテストです</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div class="search-image">
-              <img src="./shou.png">
-            </div>
-            <p>テストですテストですテストです</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div class="search-image">
-              <img src="./shou.png">
-            </div>
-            <p>テストですテストですテストです</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div class="search-image">
-              <img src="./shou.png">
-            </div>
-            <p>テストですテストですテストです</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div class="search-image">
-              <img src="./shou.png">
-            </div>
-            <p>テストですテストですテストです</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div class="search-image">
-              <img src="./shou.png">
-            </div>
-            <p>テストですテストですテストです</p>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div class="search-image">
-              <img src="./shou.png">
-            </div>
-            <p>テストですテストですテストです</p>
-          </a>
-        </li>
+        <% @posts.each do |post| %>
+          <li>
+            <%= link_to("/posts/#{post.user.name}/#{post.id}") do %>
+              <div class="search-image">
+                <%= image_tag("/post_images/#{post.image_name}") %>
+              </div>
+              <p><%= post.title %></p>
+            <% end %>
+          </li>
+        <% end %>
       </ul>
     </div>
+    <%= paginate @posts %>
   </div>
 </div>

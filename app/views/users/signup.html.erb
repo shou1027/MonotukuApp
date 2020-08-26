@@ -4,7 +4,7 @@
     <div class="signup-form">
       <%= form_tag("/users/new") do %>
         <p>ユーザー名</p>
-        <input class="signup-input" name="name" type="text">
+        <input class="signup-input" name="name" type="text" value="<%= @user.name %>">
         <p>パスワード</p>
         <input class="signup-input" name="password" type="password">
         <p>パスワード(確認)</p>

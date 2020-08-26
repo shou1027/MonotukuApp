@@ -19,7 +19,7 @@ class UsersController < ApplicationController
         @users = User.where("name LIKE ?","#{word}%").order(name: :asc).page(params[:page]).per(10)
       end
     else
-      @users = User.page(params[:page]).per(10)
+      @users = User.page(params[:page]).per(30)
     end
   end
   
@@ -42,6 +42,7 @@ class UsersController < ApplicationController
   end
   
   def signup
+    @user = User.new
   end
   
   def create
