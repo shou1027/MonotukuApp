@@ -1,0 +1,39 @@
+<div class="user-side user-line">
+  <div class="user-side-container">
+    <div class="user-view">
+      <%= image_tag("/user_images/#{@target_user.image_name}") %>
+      <p><%= @target_user.name %></p>
+    </div>
+    <div class="user-num-info">
+      <div class="user-num">
+        <%= link_to("/users/#{@target_user.name}") do %>
+          <p><%= @target_user.posts.count %></p>
+          <p>投稿</p>
+        <% end %>
+      </div>
+      <div class="user-num">
+        <%= link_to("/users/#{@target_user.name}/following") do %>
+          <p><%= @target_user.passive_relationships.count %></p>
+          <p>フォロー</p>
+        <% end %>
+      </div>
+      <div class="user-num">
+        <%= link_to("/users/#{@target_user.name}/followers") do %>
+          <p><%= @target_user.active_relationships.count %></p>
+          <p>フォロワー</p>
+        <% end %>
+      </div>
+    </div>
+    <div class="user-link-select">
+      <% if @current_user == @target_user %>
+        <%= link_to("アカウントを編集する","/users/#{@target_user.name}/edit", class: "user-post-edit") %>
+      <% else %>
+        <% if @target_user.follower?(@current_user) %>
+          <%= link_to("フォロー解除","/relationships/#{@target_user.name}/unfollow", method: :post, class: "user-unfollow") %>
+        <% else %>
+          <%= link_to("フォローする","/relationships/#{@target_user.name}/follow", method: :post, class: "user-follow") %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

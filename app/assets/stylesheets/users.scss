@@ -154,18 +154,45 @@
   float: left;
 }
 
-.user-side-container a{
+.user-num a{
+  color: black;
+}
+
+.user-num a:hover{
+  text-decoration: underline;
+}
+
+.user-link-select a{
   width: 100%;
   display: block;
-  background-color: #77f;
   color: white;
   margin-top: 30px;
   padding: 3px 0;
   text-align: center;
 }
 
-.user-side-container a:hover{
+.user-post-edit{
+  background-color: #77f;
+}
+
+.user-post-edit:hover{
   background-color: #55f;
+}
+
+.user-follow{
+  background-color: blue;
+}
+
+.user-follow:hover{
+  background-color: darkblue;
+}
+
+.user-unfollow{
+  background-color: red;
+}
+
+.user-unfollow:hover{
+  background-color: darkred;
 }
 
 .user-main{
@@ -261,6 +288,51 @@
 }
 
 .user-main-container nav{
+  margin:20px 0;
+  text-align: center;
+}
+
+/**********following**********/
+
+.follow-main-container{
+  background-color: white;
+  padding: 20px 20px;
+}
+
+.follow-user-list li{
+  overflow: hidden;
+  padding: 10px;
+  border-bottom: 1px solid #aaa;
+}
+
+.follow-user-list img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.follow-user-list img,
+.follow-user-name
+{
+  float: left;
+}
+
+.follow-user-name{
+  width: calc(100% - 50px);
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.follow-user-name a{
+  color: blue;
+}
+
+.follow-user-name a:hover{
+  text-decoration: underline;
+}
+
+.follow-user-list nav{
   margin:20px 0;
   text-align: center;
 }

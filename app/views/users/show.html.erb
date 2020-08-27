@@ -2,36 +2,10 @@
 
 <div class="user-container">
   <div class="user-contents">
-    <div class="user-side user-line">
-      <div class="user-side-container">
-        <div class="user-view">
-          <%= image_tag("/user_images/#{@target_user.image_name}") %>
-          <p><%= @target_user.name %></p>
-        </div>
-        <div class="user-num-info">
-          <div class="user-num">
-            <p><%= @posts_count %></p>
-            <p>投稿</p>
-          </div>
-          <div class="user-num">
-            <p>0</p>
-            <p>フォロー</p>
-          </div>
-          <div class="user-num">
-            <p>0</p>
-            <p>フォロワー</p>
-          </div>
-        </div>
-        <% if @current_user == @target_user %>
-          <%= link_to("アカウントを編集する","/users/#{@target_user.name}/edit") %>
-        <% else %>
-          <%= link_to("フォローする","/users/#{@target_user.name}/follow") %>
-        <% end %>
-      </div>
-    </div>
+    <%= render("users/profile") %>
     <div class="user-main user-line">
       <div class="user-main-container">
-        <h1>投稿作品</h1>
+        <h1>投稿</h1>
         <ul>
           <% @posts.each do |post| %>
             <li>
@@ -41,10 +15,12 @@
                 </div>
                 <p><%= post.title %></p>
               <% end %>
-              <div class="user-operation">
-                <%= link_to("削除","/posts/#{@target_user.name}/#{post.id}/destroy",method: :post,class: "user-delete user-link") %>
-                <%= link_to("編集","/posts/#{@target_user.name}/#{post.id}/edit",class: "user-edit user-link") %>
-              </div>
+              <% if @current_user == @target_user %>
+                <div class="user-operation">
+                  <%= link_to("削除","/posts/#{@target_user.name}/#{post.id}/destroy",method: :post,class: "user-delete user-link") %>
+                  <%= link_to("編集","/posts/#{@target_user.name}/#{post.id}/edit",class: "user-edit user-link") %>
+                </div>
+              <% end %>
             </li>
           <% end %>
         </ul>

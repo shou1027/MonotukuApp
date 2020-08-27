@@ -49,15 +49,17 @@
         <div class="home-user-ran home-ranking">
           <h2>ユーザーランキング</h2>
           <ul>
-            <% for i in 1..10 %>
+            <% i = 1 %>
+            <% User.order(post_count: :desc).limit(10).each do |user| %>
               <li>
                 <div class="home-name-info">
                   <p><%= i %></p>
-                  <%= link_to("テストですテストですテストですテストですテストですテストです","/") %>
+                  <% i += 1 %>
+                  <%= link_to(user.name,"/users/#{user.name}") %>
                 </div>
                 <div class="home-num-info">
                   <div>
-                    <p><%= rand(1000) %></p>
+                    <p><%= user.post_count %></p>
                     <p>posts</p>
                   </div>
                 </div>
@@ -66,18 +68,20 @@
           </ul>
         </div>
         <div class="home-category-ran home-ranking">
-          <h2>カテゴリーランキング</h2>
+          <h2>いいねランキング</h2>
           <ul>
-            <% for i in 1..10 %>
+            <% i = 1 %>
+            <% User.order(post_count: :desc).limit(10).each do |user| %>
               <li>
                 <div class="home-name-info">
                   <p><%= i %></p>
-                  <%= link_to("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA","/") %>
+                  <% i += 1 %>
+                  <%= link_to(user.name,"/users/#{user.name}") %>
                 </div>
                 <div class="home-num-info">
                   <div>
-                    <p><%= rand(1000) %></p>
-                    <p>posts</p>
+                    <p><%= user.post_count %></p>
+                    <p>いいね</p>
                   </div>
                 </div>
               </li>

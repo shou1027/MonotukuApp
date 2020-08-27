@@ -161,11 +161,21 @@
   align-items: center;
 }
 
+.home-name-info a{
+  color: blue;
+}
+
+.home-name-info a:hover{
+  text-decoration: underline;
+}
+
 .home-name-info p{
   padding-right: 10px;
   font-size: 18px;
   font-weight: bold;
   color: #aaa;
+  width: 40px;
+  text-align: center;
 }
 
 .home-num-info{

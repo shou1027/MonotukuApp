@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  post "likes/:user_name/like" => "likes#like"
+  post "likes/user_name/unlike" => "likes#unlike"
+
+  post "relationships/:user_name/follow" => "relationships#follow"
+  post "relationships/:user_name/unfollow" => "relationships#unfollow"
+
   get "posts/new" => "posts#new"
   post "posts/new" => "posts#create"
   get "posts/search" => "posts#search"
@@ -15,9 +21,9 @@ Rails.application.routes.draw do
   get "users/search" => "users#index"
   get "users/:user_name" => "users#show"
   post "users/new" => "users#create"
+  get "users/:user_name/following" => "users#following"
+  get "users/:user_name/followers" => "users#followers"
   get "users/:user_name/edit" => "users#edit"
-  post "users/:user_name/follow"
-  post "users/:user_name/unfollow"
   post "users/:user_name/update" => "users#update"
   post "users/:user_name/destroy" => "users#destroy"
   

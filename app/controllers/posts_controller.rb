@@ -13,11 +13,13 @@ class PostsController < ApplicationController
   
   def create
     @post_image = params[:post_image]
-    @post = @current_user.posts.build(title: params[:post_title], tags: params[:post_tags].strip.gsub(/[\s　]+/," "), content: params[:post_content])
+    posts = @current_user.posts
+    @post = posts.build(title: params[:post_title], tags: params[:post_tags].strip.gsub(/[\s　]+/," "), content: params[:post_content])
     time = DateTime.now
     @post.image_name = @post_image.blank? ? "" : "#{@current_user.name + format("%04d%02d%02d%02d%02d%02d",time.year.to_s,time.month.to_s,time.day.to_s,time.hour.to_s,time.minute.to_s,time.second.to_s)}.jpg"
     if @post.save
       File.binwrite("public/post_images/#{@post.image_name}", @post_image.read)
+      @current_user.update(post_count: posts.count)
       redirect_to("/")
     else
       @submit = "/posts/new"
@@ -63,7 +65,10 @@ class PostsController < ApplicationController
   
   def destroy
     user = User.find_by(name: params[:user_name])
-    user.posts.find_by(id: params[:id]).destroy
-    redirect_to("/users/#{user.name}")
+    posts = user.posts
+    if posts.find_by(id: params[:id]).destroy
+      user.post_count = posts.count
+      redirect_to("/users/#{user.name}")
+    end
   end
 end

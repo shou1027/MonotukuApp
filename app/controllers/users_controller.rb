@@ -5,11 +5,19 @@ class UsersController < ApplicationController
   
   def show
     target_user
-    posts = @target_user.posts
-    @posts_count = posts.count
-    @posts = posts.page(params[:page]).per(10)
+    @posts = @target_user.posts.page(params[:page]).per(30)
   end
-
+  
+  def following
+    target_user
+    @users = @target_user.following.page(params[:page]).per(30)
+  end
+  
+  def followers
+    target_user
+    @users = @target_user.followers.page(params[:page]).per(30)
+  end
+  
   def index
     word = params[:word]
     if word
@@ -46,7 +54,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(name: params[:name],password: params[:password], image_name: "default.jpg")
+    @user = User.new(name: params[:name],password: params[:password], image_name: "default.jpg", post_count: 0)
     
     if (params[:confirm] == params[:password]) && @user.save
       session[:user_name] = @user.name
