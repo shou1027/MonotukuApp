@@ -17,8 +17,8 @@
               <% end %>
               <% if @current_user == @target_user %>
                 <div class="user-operation">
-                  <%= link_to("削除","/posts/#{@target_user.name}/#{post.id}/destroy",method: :post,class: "user-delete user-link") %>
-                  <%= link_to("編集","/posts/#{@target_user.name}/#{post.id}/edit",class: "user-edit user-link") %>
+                  <%= link_to("削除","/posts/#{@target_user.name}/#{post.id}/destroy",method: :post,class: "user-operation-delete user-operation-link") %>
+                  <%= link_to("編集","/posts/#{@target_user.name}/#{post.id}/edit",class: "user-operation-edit user-operation-link") %>
                 </div>
               <% end %>
             </li>

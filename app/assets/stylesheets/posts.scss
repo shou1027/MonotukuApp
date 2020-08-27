@@ -232,6 +232,39 @@
   word-wrap: break-word;
 }
 
+.work-like{
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.work-like-wrapper{
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  float: right;
+}
+
+.work-like-gray{
+  display: block;
+  float: left;
+  padding-right: 3px;
+  color: gray;
+}
+
+.work-like-gray{
+  display: block;
+  float: left;
+  padding-right: 3px;
+  color: red;
+}
+
+.work-like span{
+  display: block;
+  float: left;
+  color: black;
+}
+
 @media(max-width: 1000px){
   .search-main li{
     width: 50%;

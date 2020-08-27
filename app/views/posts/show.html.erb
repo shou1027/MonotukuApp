@@ -19,5 +19,24 @@
         <%= content %><br/>
       <% end %>
     </div>
+    <% if @current_user != @target_user %>
+      <div class="work-like">
+        <% if @user %>
+          <%= link_to("/likes/#{@user.name}/#{@post.id}/like",method: :post) do %>
+            <div class="work-like-wrapper">
+              <div class="fas fa-heart work-like-gray"></div>
+              <span>111</span>
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to("/likes/#{@user.name}/#{@post.id}/unlike",method: :post) do %>
+            <div class="work-like-wrapper">
+              <div class="fas fa-heart work-like-red"></div>
+              <span>111</span>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -67,7 +67,7 @@ class PostsController < ApplicationController
     user = User.find_by(name: params[:user_name])
     posts = user.posts
     if posts.find_by(id: params[:id]).destroy
-      user.post_count = posts.count
+      user.update(post_count: posts.count)
       redirect_to("/users/#{user.name}")
     end
   end

@@ -263,27 +263,27 @@
   margin-top: 5px;
 }
 
-.user-link{
+.user-operation-link{
   color: white;
   font-size: 12px;
   padding: 5px 10px;
   float: right;
 }
 
-.user-edit{
+.user-operation-edit{
   background-color: green;
 }
 
-.user-edit:hover{
+.user-operation-edit:hover{
   background-color: darkgreen;
 }
 
-.user-delete{
+.user-operation-delete{
   background-color: red;
   margin-left: 5px;
 }
 
-.user-delete:hover{
+.user-operation-delete:hover{
   background-color: darkred;
 }
 
