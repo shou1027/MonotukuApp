@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :user_likes, class_name:  "Like",
                                   foreign_key: "user_id",
                                   dependent:   :destroy
-  has_many :users, through: :user_likes,  source: :post
+  has_many :like_posts, through: :user_likes,  source: :post
   
   validates :name, {presence:true,uniqueness:true,length: {maximum: 30}}
   validates :password, {presence:true,length: {minimum: 6, maximum: 30}}
@@ -21,5 +21,9 @@ class User < ApplicationRecord
   # 現在のユーザーがフォローしてたらtrueを返す
   def follower?(other_user)
     followers.include?(other_user)
+  end
+  
+  def like?(post)
+    like_posts.include?(post)
   end
 end

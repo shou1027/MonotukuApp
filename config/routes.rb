@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   post "likes/:user_name/:id/like" => "likes#like"
-  post "likes/user_name/:id/unlike" => "likes#unlike"
+  post "likes/:user_name/:id/unlike" => "likes#unlike"
 
   post "relationships/:user_name/follow" => "relationships#follow"
   post "relationships/:user_name/unfollow" => "relationships#unfollow"

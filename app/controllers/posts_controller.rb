@@ -60,7 +60,6 @@ class PostsController < ApplicationController
     @post = @target_user.posts.find_by(id: params[:id])
     @tags = @post.tags.split(/\s/)
     @post_contents = @post.content.split(/\n/)
-    @user = @post.user
   end
   
   def destroy

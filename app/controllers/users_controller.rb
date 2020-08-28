@@ -10,12 +10,12 @@ class UsersController < ApplicationController
   
   def following
     target_user
-    @users = @target_user.following.page(params[:page]).per(30)
+    @users = Kaminari.paginate_array(@target_user.following.reverse).page(params[:page]).per(30)
   end
   
   def followers
     target_user
-    @users = @target_user.followers.page(params[:page]).per(30)
+    @users = Kaminari.paginate_array(@target_user.followers.reverse).page(params[:page]).per(30)
   end
   
   def index
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def login
     @user = User.find_by(name: params[:name],password: params[:password])
     if @user
-      session[:user_name] = @user.name
+      session[:user_id] = @user.id
       redirect_to("/")
     else
       render("users/login_form")
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   end
   
   def logout
-    session[:user_name] = nil
+    session[:user_id] = nil
     redirect_to("/about")
   end
   
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
     @user = User.new(name: params[:name],password: params[:password], image_name: "default.jpg", post_count: 0)
     
     if (params[:confirm] == params[:password]) && @user.save
-      session[:user_name] = @user.name
+      session[:user_id] = @user.id
       redirect_to("/")
     else
       render("users/signup")
@@ -96,7 +96,7 @@ class UsersController < ApplicationController
       File.delete("public/user_images/#{@target_user.image_name}")
     end
     @target_user.destroy
-    session[:user_name] = nil
+    session[:user_id] = nil
     
     redirect_to("/about")
   end

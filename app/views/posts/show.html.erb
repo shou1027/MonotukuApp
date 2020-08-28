@@ -1,6 +1,6 @@
 <div class="work-container">
   <div class="work-contents">
-    <p><%= link_to(@user.name, "/users/#{@user.name}", class: "work-user-name") %></p>
+    <p><%= link_to(@target_user.name, "/users/#{@target_user.name}", class: "work-user-name") %></p>
     <h1><%= @post.title %></h1>
     <div class="work-img-container">
       <div class="work-img-content">
@@ -21,18 +21,18 @@
     </div>
     <% if @current_user != @target_user %>
       <div class="work-like">
-        <% if @user %>
-          <%= link_to("/likes/#{@user.name}/#{@post.id}/like",method: :post) do %>
+        <% if @current_user.like?(@post) %>
+          <%= link_to("/likes/#{@target_user.name}/#{@post.id}/unlike",method: :post) do %>
             <div class="work-like-wrapper">
-              <div class="fas fa-heart work-like-gray"></div>
-              <span>111</span>
+              <div class="fas fa-heart work-like-red"></div>
+              <span><%= 1 %></span>
             </div>
           <% end %>
         <% else %>
-          <%= link_to("/likes/#{@user.name}/#{@post.id}/unlike",method: :post) do %>
+          <%= link_to("/likes/#{@target_user.name}/#{@post.id}/like",method: :post) do %>
             <div class="work-like-wrapper">
-              <div class="fas fa-heart work-like-red"></div>
-              <span>111</span>
+              <div class="fas fa-heart work-like-gray"></div>
+              <span><%= 1 %></span>
             </div>
           <% end %>
         <% end %>
