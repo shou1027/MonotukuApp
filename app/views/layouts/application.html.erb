@@ -33,7 +33,9 @@
               <%= link_to("投稿する","/posts/new") %>
             </li>
             <li>
-              <%= link_to(@current_user.name,"/users/#{@current_user.name}") %>
+              <%= link_to("/users/#{@current_user.name}") do %>
+                <%= image_tag("/user_images/#{@current_user.image_name}") %>
+              <% end %>
             </li>
             <li>
               <%= link_to("ログアウト","/logout") %>
@@ -49,6 +51,31 @@
         </ul>
       </div>
     </header>
+    
+    <div class="flash-container">
+      <div class="flash-float">
+        <% if flash[:succcess] %>
+          <div class="flash flash-success">
+            <%= flash[:succcess] %>
+          </div>
+        <% elsif flash[:danger] %>
+          <div class="flash flash-danger">
+            <%= flash[:danger] %>
+          </div>
+        <% elsif flash[:notice] %>
+          <div class="flash flash-notice">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+      </div>
+      <div class="error-message">
+        <% if @message %>
+          <% @message.errors.full_messages.each do |message| %>
+            <p><%= message %></p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
 
     <%= yield %>
     

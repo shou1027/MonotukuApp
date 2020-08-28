@@ -25,13 +25,15 @@
       </div>
     </div>
     <div class="user-link-select">
-      <% if @current_user == @target_user %>
-        <%= link_to("アカウントを編集する","/users/#{@target_user.name}/edit", class: "user-post-edit") %>
-      <% else %>
-        <% if @target_user.follower?(@current_user) %>
-          <%= link_to("フォロー解除","/relationships/#{@target_user.name}/unfollow", method: :post, class: "user-unfollow") %>
+      <% if @current_user %>
+        <% if @current_user == @target_user %>
+          <%= link_to("アカウントを編集する","/users/#{@target_user.name}/edit", class: "user-post-edit") %>
         <% else %>
-          <%= link_to("フォローする","/relationships/#{@target_user.name}/follow", method: :post, class: "user-follow") %>
+          <% if @target_user.follower?(@current_user) %>
+            <%= link_to("フォロー解除","/relationships/#{@target_user.name}/unfollow", method: :post, class: "user-unfollow") %>
+          <% else %>
+            <%= link_to("フォローする","/relationships/#{@target_user.name}/follow", method: :post, class: "user-follow") %>
+          <% end %>
         <% end %>
       <% end %>
     </div>

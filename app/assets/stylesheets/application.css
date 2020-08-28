@@ -113,6 +113,48 @@ header{
   background-color: #44f;
 }
 
+.header-nav img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+/**********flash**********/
+
+.flash-float{
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.flash{
+  color: white;
+  padding: 5px;
+  font-size: 20px;
+  
+}
+
+.flash-success{
+  background-color: green;
+}
+
+.flash-danger{
+  background-color: red;
+}
+
+.flash-notice{
+  background-color: yellow;
+}
+
+.error-message p{
+  padding: 5px;
+  background-color: red;
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+}
+
 /**********footer**********/
 
 footer{

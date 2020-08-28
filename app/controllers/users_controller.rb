@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   
   def show
     target_user
-    @posts = @target_user.posts.page(params[:page]).per(30)
+    @posts = @target_user.posts.order(created_at: :desc).page(params[:page]).per(30)
   end
   
   def following
@@ -38,6 +38,7 @@ class UsersController < ApplicationController
     @user = User.find_by(name: params[:name],password: params[:password])
     if @user
       session[:user_id] = @user.id
+      flash[:succcess] = "ログインしました"
       redirect_to("/")
     else
       render("users/login_form")
@@ -46,6 +47,7 @@ class UsersController < ApplicationController
   
   def logout
     session[:user_id] = nil
+    flash[:succcess] = "ログインしました"
     redirect_to("/about")
   end
   
@@ -54,12 +56,13 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(name: params[:name],password: params[:password], image_name: "default.jpg", post_count: 0)
+    @user = User.new(name: params[:name],password: params[:password], image_name: "default.jpg", tags: "", post_count: 0)
     
     if (params[:confirm] == params[:password]) && @user.save
       session[:user_id] = @user.id
       redirect_to("/")
     else
+      @message = @user
       render("users/signup")
     end
   end
@@ -77,7 +80,7 @@ class UsersController < ApplicationController
       @target_user.image_name = "#{@target_user.name + format("%02d%02d%02d",time.hour.to_s,time.minute.to_s,time.second.to_s)}.jpg"
     end
     
-    @target_user.tags = params[:tags]
+    @target_user.tags = params[:tags].strip.gsub(/[\s　]+/," ")
     
     if @target_user.save
       if user_image

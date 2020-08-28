@@ -14,7 +14,7 @@ class User < ApplicationRecord
                                   dependent:   :destroy
   has_many :like_posts, through: :user_likes,  source: :post
   
-  validates :name, {presence:true,uniqueness:true,length: {maximum: 30}}
+  validates :name, {format: {with: /\A[a-z0-9]+\z/},presence:true,uniqueness:true,length: {maximum: 30}}
   validates :password, {presence:true,length: {minimum: 6, maximum: 30}}
   validates :tags, {length: {maximum: 100}}
   

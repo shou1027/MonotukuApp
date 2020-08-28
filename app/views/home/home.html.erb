@@ -16,32 +16,26 @@
             <span>タグ</span>
           <% end %>
         </div>
-        <div class="home-original-menu">
-          <%= link_to("/") do %>
-            <span>お気に入り</span>
-          <% end %>
-          <%= link_to("/") do %>
-            <span>フォロー</span>
-          <% end %>
-        </div>
       </div>
     </div>
     <div class="home-main home-line">
       <div class="home-main-container">
         <h1><%= @content_name %></h1>
-        <ul>
-          <% @posts.each do |post| %>
-            <li class="home-content">
-              <%= link_to("/posts/#{post.user.name}/#{post.id}") do %>
-                <div class="home-img-container">
-                  <%= image_tag("/post_images/#{post.image_name}") %>
-                </div>
-                <p><%= post.title %></p>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
-        <%= paginate @posts %>
+        <% if !@posts.blank? %>
+          <ul>
+            <% @posts.each do |post| %>
+              <li class="home-content">
+                <%= link_to("/posts/#{post.user.name}/#{post.id}") do %>
+                  <div class="home-img-container">
+                    <%= image_tag("/post_images/#{post.image_name}") %>
+                  </div>
+                  <p><%= post.title %></p>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+          <%= paginate(@posts) %>
+        <% end %>
       </div>
     </div>
     <div class="home-side home-line">
@@ -49,11 +43,18 @@
         <div class="home-user-ran home-ranking">
           <h2>ユーザーランキング</h2>
           <ul>
-            <% i = 1 %>
-            <% User.order(post_count: :desc).limit(10).each do |user| %>
+            <% rank = 0 %>
+            <% like_old = 100000 %>
+            <% User.order(post_count: :desc).limit(10).each.with_index(1) do |user,i| %>
               <li>
                 <div class="home-name-info">
-                  <p><%= i %></p>
+                  <%
+                    if user.post_count < like_old
+                      rank = i
+                      like_old = user.post_count
+                    end
+                  %>
+                  <p><%= rank %></p>
                   <% i += 1 %>
                   <%= link_to(user.name,"/users/#{user.name}") %>
                 </div>
@@ -70,17 +71,23 @@
         <div class="home-category-ran home-ranking">
           <h2>いいねランキング</h2>
           <ul>
-            <% i = 1 %>
-            <% User.order(post_count: :desc).limit(10).each do |user| %>
+            <% rank = 0 %>
+            <% like_old = 100000 %>
+            <% Post.order(like_count: :desc).limit(10).each.with_index(1) do |post,i| %>
               <li>
                 <div class="home-name-info">
-                  <p><%= i %></p>
-                  <% i += 1 %>
-                  <%= link_to(user.name,"/users/#{user.name}") %>
+                  <%
+                    if post.like_count < like_old
+                      rank = i
+                      like_old = post.like_count
+                    end
+                  %>
+                  <p><%= rank %></p>
+                  <%= link_to(post.title,"/posts/#{post.user.name}/#{post.id}") %>
                 </div>
                 <div class="home-num-info">
                   <div>
-                    <p><%= user.post_count %></p>
+                    <p><%= post.like_count %></p>
                     <p>いいね</p>
                   </div>
                 </div>

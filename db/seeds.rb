@@ -17,7 +17,7 @@ users.each do |user|
     ran2 = rand(40) + 10
     ran3 = rand(20)
     ran4 = rand(200)
-    user_post = user.posts.build(title: (0..ran2).map{ ('A'..'Z').to_a[rand(26)] }.join, image_name: "default.jpg", tags: (0..ran3).map{ ('A'..'Z').to_a[rand(26)] }.join, content: (0..ran4).map{ ('A'..'Z').to_a[rand(26)] }.join)
+    user_post = user.posts.build(title: (0..ran2).map{ ('A'..'Z').to_a[rand(26)] }.join, image_name: "default.jpg", tags: (0..ran3).map{ ('A'..'Z').to_a[rand(26)] }.join, content: (0..ran4).map{ ('A'..'Z').to_a[rand(26)] }.join, like_count: 0)
     user_post.save
   end
   user.update(post_count: ran)

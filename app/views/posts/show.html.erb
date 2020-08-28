@@ -1,6 +1,6 @@
 <div class="work-container">
   <div class="work-contents">
-    <p><%= link_to(@target_user.name, "/users/#{@target_user.name}", class: "work-user-name") %></p>
+    <p>by </span><%= link_to("#{@target_user.name}", "/users/#{@target_user.name}", class: "work-user-name") %></p>
     <h1><%= @post.title %></h1>
     <div class="work-img-container">
       <div class="work-img-content">
@@ -32,7 +32,7 @@
           <%= link_to("/likes/#{@target_user.name}/#{@post.id}/like",method: :post) do %>
             <div class="work-like-wrapper">
               <div class="fas fa-heart work-like-gray"></div>
-              <span><%= 1 %></span>
+              <span><%= @post.post_likes.count %></span>
             </div>
           <% end %>
         <% end %>
