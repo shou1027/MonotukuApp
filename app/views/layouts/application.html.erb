@@ -19,36 +19,46 @@
           <%= link_to("モノツク","/") %>
         </div>
         <div class="header-search">
-          <span class="fas fa-search fa-lg"></span>
+          <%= link_to("/posts/search") do %>
+            <span class="fas fa-search fa-lg header-search-big"></span>
+            <span class="fas fa-search header-search-small"></span>
+          <% end %>
           <form action="/posts/search" autocomplete="off">
             <input type="text" name="word" placeholder="キーワード検索">
           </form>
         </div>
-        <ul class="header-nav">
-          <li>
-            <%= link_to("ユーザー一覧","/users") %>
-          </li>
-          <% if @current_user %>
-            <li>
-              <%= link_to("投稿する","/posts/new") %>
-            </li>
-            <li>
-              <%= link_to("/users/#{@current_user.name}") do %>
-                <%= image_tag("/user_images/#{@current_user.image_name}") %>
+        <div class="header-nav-container">
+          <div class="header-nav-float">
+            <div class="header-menu">
+              <span class="fas fa-bars fa-lg" id="header-dropdown-click"></span>
+            </div>
+            <ul class="header-nav" id="header-dropdown-menu">
+              <li>
+                <%= link_to("ユーザー一覧","/users") %>
+              </li>
+              <% if @current_user %>
+                <li>
+                  <%= link_to("投稿する","/posts/new") %>
+                </li>
+                <li>
+                  <%= link_to("/users/#{@current_user.name}") do %>
+                    <%= image_tag("/user_images/#{@current_user.image_name}") %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to("ログアウト","/logout") %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to("ユーザー登録","/signup") %>
+                </li>
+                <li>
+                  <%= link_to("ログイン","/login") %>
+                </li>
               <% end %>
-            </li>
-            <li>
-              <%= link_to("ログアウト","/logout") %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to("ユーザー登録","/signup") %>
-            </li>
-            <li>
-              <%= link_to("ログイン","/login") %>
-            </li>
-          <% end %>
-        </ul>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
     

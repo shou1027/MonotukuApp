@@ -9,11 +9,13 @@
           <%= link_to("/") do %>
             <span>新着</span>
           <% end %>
-          <%= link_to("/timeline") do %>
-            <span>タイムライン</span>
-          <% end %>
-          <%= link_to("/tag") do %>
-            <span>タグ</span>
+          <% if @current_user %>
+            <%= link_to("/timeline") do %>
+              <span>タイムライン</span>
+            <% end %>
+            <%= link_to("/tag") do %>
+              <span>タグ</span>
+            <% end %>
           <% end %>
         </div>
       </div>

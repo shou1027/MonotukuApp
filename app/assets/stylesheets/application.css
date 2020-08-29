@@ -43,6 +43,7 @@ p{
 
 header{
   background-color: #77f;
+  position: relative;
 }
 
 .header-container{
@@ -73,7 +74,7 @@ header{
   display: flex;
   align-items: center;
   height: 100%;
-  margin-left: 20px;
+  margin-left: 30px;
   float: left;
 }
 
@@ -87,6 +88,27 @@ header{
   width: 500px;
   height: 30px;
   font-size: 14px;
+}
+
+.header-nav-container{
+  height: 100%;
+  float: right;
+}
+
+.header-nav-float{
+  height: 100%;
+}
+
+.header-menu{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.fa-bars{
+  color: white;
+  padding: 10px;
+  display: none;
 }
 
 .header-nav{
@@ -114,9 +136,16 @@ header{
 }
 
 .header-nav img{
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   object-fit: cover;
+}
+
+.header-menu{
+  float: right;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 /**********flash**********/
@@ -207,4 +236,85 @@ footer{
 
 .footer-nav a:hover{
   background-color: #333;
+}
+
+@media(max-width: 1000px){
+  .header-search-big{
+    display:block;
+  }
+  
+  .header-search input{
+    max-width: 250px;
+    width: 500px;
+    height: 30px;
+    font-size: 14px;
+    display: none;
+  }
+}
+
+@media(max-width: 800px){
+  .header-logo a{
+    font-size: 20px;
+  }
+  
+  .header-search-big{
+    display:none;
+  }
+  
+  .header-search-small{
+    display:block;
+  }
+  
+  .header-nav{
+    font-size: 12px;
+  }
+  
+  /**********footer*********/
+  
+  .footer-logo a{
+    font-size: 20px;
+  }
+  
+  .footer-nav{
+    font-size: 12px;
+  }
+}
+
+@media(max-width: 860px){
+  .header-nav-float{
+  
+  }
+  
+  .fa-bars{
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .header-nav{
+    display: none;
+    height: auto;
+    width: 200px;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    z-index: 2;
+    float: none;
+    background-color: gray;
+  }
+  
+  .header-nav li{
+    display: block;
+    text-align: center;
+    float: none;
+  }
+  
+  .header-nav a{
+    margin: 0;
+    padding: 5px 0;
+    border-radius: 0px;
+  }
+  
+  .header-nav a:hover{
+    background-color: darkgray;
+  }
 }

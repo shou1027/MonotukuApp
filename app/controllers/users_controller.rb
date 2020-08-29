@@ -41,13 +41,14 @@ class UsersController < ApplicationController
       flash[:succcess] = "ログインしました"
       redirect_to("/")
     else
+      flash[:danger] = "入力内容が間違っています"
       render("users/login_form")
     end
   end
   
   def logout
     session[:user_id] = nil
-    flash[:succcess] = "ログインしました"
+    flash[:succcess] = "ログアウトしました"
     redirect_to("/about")
   end
   
