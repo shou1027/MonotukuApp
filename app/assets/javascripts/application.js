@@ -14,6 +14,7 @@
 // require turbolinks
 //= require_tree .
 
+/*
 document.addEventListener("DOMContentLoaded", function() {
   let dropdown = document.getElementById("header-dropdown-menu");
   let dropdown_click = document.getElementById("header-dropdown-click");
@@ -41,4 +42,4 @@ document.addEventListener("DOMContentLoaded", function() {
       };
     }
   }
-});
+});*/
