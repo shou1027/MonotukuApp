@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-200.times do |n|
+100.times do |n|
   User.create(name: (0...12).map{ ('A'..'Z').to_a[rand(26)] }.join, password: (0...8).map{ ('A'..'Z').to_a[rand(26)] }.join, image_name: "default.jpg")
 end
 
 users = User.all
 users.each do |user|
-  ran = rand(100)
+  ran = rand(50)
   ran.times do |n|
     ran2 = rand(40) + 10
     ran3 = rand(20)
