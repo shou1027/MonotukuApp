@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   private
     def current_user
       @current_user = User.find_by(id: session[:user_id])
-      session[:user_id] = nil
     end
     
     def target_user
@@ -15,6 +14,7 @@ class ApplicationController < ActionController::Base
     
     def allow_logged_in
       if !@current_user
+        session[:user_id] = nil
         redirect_to("/login")
       end
     end

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: "sample", password: "example", image_name: "default.jpg", tags: "", post_count: 0)
+User.create(name: "sample", password: "sample", image_name: "default.jpg", tags: "", post_count: 0)
 
 100.times do |n|
   #User.create(name: (6..12).map{ ('a'..'z').to_a[rand(26)] }.join, password: (6..10).map{ ('a'..'z').to_a[rand(26)] }.join, image_name: "default.jpg", tags: "", post_count: 0)

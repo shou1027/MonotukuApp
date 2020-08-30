@@ -32,13 +32,13 @@ class UsersController < ApplicationController
   end
   
   def login
-    @user = User.find_by(name: params[:name],password: params[:password])
-    if @user
+    @user = User.find_by(name: params[:name])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:succcess] = "ログインしました"
       redirect_to("/")
     else
-      flash[:danger] = "ユーザーが見つかりません"
+      flash[:danger] = "入力情報が間違っています"
       render("users/login_form")
     end
   end
@@ -54,9 +54,9 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(name: params[:name],password: params[:password], image_name: "default.jpg", tags: "", post_count: 0)
+    @user = User.new(name: params[:name],password: params[:password], password_confirmation: params[:confirm], image_name: "default.jpg", tags: "", post_count: 0)
     
-    if (params[:confirm] == params[:password]) && @user.save
+    if @user.save
       session[:user_id] = @user.id
       flash[:succcess] = "ログインしました"
       redirect_to("/")

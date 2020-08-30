@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   
   document.onclick = function(){
-    if(header_dropdown && (document.body.clientWidth <= 800)){
+    if(header_dropdown && (window.clientWidth <= 800)){
       if(!header_dropdown_click_flag){
         header_dropdown.style.display = "none";
         header_dropdown_click.style.backgroundColor = "rgba(0,0,0,0)";
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
       else header_dropdown_click_flag = false;
     }
     
-    if(dropdown && (document.body.clientWidth <= 860)){
+    if(dropdown && (window.clientWidth <= 860)){
       if(!dropdown_click_flag){
         dropdown.style.display = "none";
         dropdown_click.style.backgroundColor = "rgba(0,0,0,0)";

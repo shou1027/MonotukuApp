@@ -1,24 +1,24 @@
-# README
+アプリケーション概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+「目的」
+もの作りのアイデアを多くの人と共有するため
 
-Things you may want to cover:
+「アプリ内容」
+もの作り（実体のあるもの）に関する記事を投稿したり、他の人が投稿した記事を閲覧するアプリケーション
 
-* Ruby version
+「機能」
+ログイン
+フォロー
+いいね
+記事投稿、編集、表示、削除
+記事検索
+ユーザー登録、編集、表示、削除
+ユーザー検索
+ランキング
+タイムライン、タグ
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+「開発環境」
+ruby 2.6.3
+Rails 5.1.6
+AWS cloud9
+Heroku
