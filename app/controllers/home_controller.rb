@@ -32,4 +32,9 @@ class HomeController < ApplicationController
   
   def help
   end
+  
+  def sample
+    session[:user_id] = 1
+    redirect_to("/")
+  end
 end

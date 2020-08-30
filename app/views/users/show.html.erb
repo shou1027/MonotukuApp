@@ -1,4 +1,4 @@
-<% provide(:title,"ユーザー詳細") %>
+<% provide(:title,@target_user.name) %>
 
 <div class="user-container">
   <div class="user-contents">
@@ -6,25 +6,29 @@
     <div class="user-main user-line">
       <div class="user-main-container">
         <h1>投稿</h1>
-        <ul>
-          <% @posts.each do |post| %>
-            <li>
-              <%= link_to("/posts/#{@target_user.name}/#{post.id}", class: "user-post-link") do %>
-                <div class="user-image">
-                  <%= image_tag("/post_images/#{post.image_name}") %>
-                </div>
-                <p><%= post.title %></p>
-              <% end %>
-              <% if @current_user == @target_user %>
-                <div class="user-operation">
-                  <%= link_to("削除","/posts/#{@target_user.name}/#{post.id}/destroy",method: :post,class: "user-operation-delete user-operation-link") %>
-                  <%= link_to("編集","/posts/#{@target_user.name}/#{post.id}/edit",class: "user-operation-edit user-operation-link") %>
-                </div>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
-        <%= paginate @posts %>
+        <% if !@posts.blank? %>
+          <ul>
+            <% @posts.each do |post| %>
+              <li>
+                <%= link_to("/posts/#{@target_user.name}/#{post.id}", class: "user-post-link") do %>
+                  <div class="user-image">
+                    <%= image_tag("/post_images/#{post.image_name}") %>
+                  </div>
+                  <p><%= post.title %></p>
+                <% end %>
+                <% if @current_user == @target_user %>
+                  <div class="user-operation">
+                    <%= link_to("削除","/posts/#{@target_user.name}/#{post.id}/destroy",method: :post,class: "user-operation-delete user-operation-link") %>
+                    <%= link_to("編集","/posts/#{@target_user.name}/#{post.id}/edit",class: "user-operation-edit user-operation-link") %>
+                  </div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+          <%= paginate @posts %>
+        <% else %>
+          <p class="non-content">投稿がありません</p>
+        <% end %>
       </div>
     </div>
   </div>

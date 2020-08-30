@@ -4,27 +4,24 @@ class UsersController < ApplicationController
   before_action :allow_proper_user, {only: [:edit, :update, :destroy]}
   
   def show
-    target_user
     @posts = @target_user.posts.order(created_at: :desc).page(params[:page]).per(30)
   end
   
   def following
-    target_user
     @users = Kaminari.paginate_array(@target_user.following.reverse).page(params[:page]).per(30)
   end
   
   def followers
-    target_user
     @users = Kaminari.paginate_array(@target_user.followers.reverse).page(params[:page]).per(30)
   end
   
   def index
     word = params[:word]
-    if word
+    if !word.blank?
       if word == "_"
-        @users = User.where("name LIKE ?","\\_%").order(name: :asc).page(params[:page]).per(10)
+        @users = User.where("name LIKE ?","\\_%").order(name: :asc).page(params[:page]).per(30)
       else
-        @users = User.where("name LIKE ?","#{word}%").order(name: :asc).page(params[:page]).per(10)
+        @users = User.where("name LIKE ?","#{word}%").order(name: :asc).page(params[:page]).per(30)
       end
     else
       @users = User.page(params[:page]).per(30)
@@ -41,7 +38,7 @@ class UsersController < ApplicationController
       flash[:succcess] = "ログインしました"
       redirect_to("/")
     else
-      flash[:danger] = "入力内容が間違っています"
+      flash[:danger] = "ユーザーが見つかりません"
       render("users/login_form")
     end
   end
@@ -61,6 +58,7 @@ class UsersController < ApplicationController
     
     if (params[:confirm] == params[:password]) && @user.save
       session[:user_id] = @user.id
+      flash[:succcess] = "ログインしました"
       redirect_to("/")
     else
       @message = @user
@@ -74,7 +72,7 @@ class UsersController < ApplicationController
   def update
     user_image = params[:user_image]
     if user_image
-      if (@target_user.image_name != "default.jpg") & File.exist?("public/user_images/#{@target_user.image_name}")
+      if (@target_user.image_name != "default.jpg") && File.exist?("public/user_images/#{@target_user.image_name}")
         File.delete("public/user_images/#{@target_user.image_name}")
       end
       time = DateTime.now

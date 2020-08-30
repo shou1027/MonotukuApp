@@ -1,4 +1,6 @@
 class LikesController < ApplicationController
+  before_action :allow_logged_in
+  
   def like
     target_user
     @post = Post.find_by(id: params[:id])

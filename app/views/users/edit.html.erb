@@ -1,3 +1,5 @@
+<% provide(:title,"ユーザー編集") %>
+
 <div class="edit-container">
   <div class="edit-contents">
     <%= form_tag("/users/#{@target_user.name}/update",multipart: true) do %>
@@ -13,7 +15,7 @@
       </div>
       <div class="edit-tag">
         <p>タグ</p>
-        <input type="text" placeholder="例:電子回路　マイコン" name="tags" value="<%= @target_user.tags %>">
+        <input type="text" placeholder="スペース区切りで入力" name="tags" value="<%= @target_user.tags %>">
       </div>
       <input type="submit" value="変更する" class="edit-submit">
     <% end %>

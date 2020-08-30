@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get "tag" => "home#tag"
   get "about" => "home#about"
   get "help" => "home#help"
+  get "sample" => "home#sample"
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

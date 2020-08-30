@@ -214,6 +214,33 @@
   background-color: darkgreen;
 }
 
+.help-container{
+  padding: 20px;
+}
+
+.help-contents{
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+}
+
+.help-contents h1{
+  font-size: 28px;
+  text-align: center;
+}
+
+.help-contents h2{
+  font-size: 20px;
+}
+
+.help-content{
+  padding: 15px 0;
+}
+
+.help-content p{
+  padding-left: 15px;
+}
+
 @media(max-width: 1200px)
 {
   .home-main{

@@ -1,5 +1,3 @@
-<% provide(:title,"home") %>
-
 <div class="home-container">
   <div class="home-contents">
     <div class="home-menu home-line">
@@ -37,6 +35,8 @@
             <% end %>
           </ul>
           <%= paginate(@posts) %>
+        <% else %>
+          <p class="non-content">投稿がありません</p>
         <% end %>
       </div>
     </div>
@@ -46,18 +46,17 @@
           <h2>ユーザーランキング</h2>
           <ul>
             <% rank = 0 %>
-            <% like_old = 100000 %>
+            <% post_old = 100000 %>
             <% User.order(post_count: :desc).limit(10).each.with_index(1) do |user,i| %>
               <li>
                 <div class="home-name-info">
                   <%
-                    if user.post_count < like_old
+                    if user.post_count < post_old
                       rank = i
-                      like_old = user.post_count
+                      post_old = user.post_count
                     end
                   %>
                   <p><%= rank %></p>
-                  <% i += 1 %>
                   <%= link_to(user.name,"/users/#{user.name}") %>
                 </div>
                 <div class="home-num-info">

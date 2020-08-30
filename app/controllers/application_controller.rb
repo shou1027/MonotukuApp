@@ -1,10 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :current_user
+  before_action :target_user
   
   private
     def current_user
       @current_user = User.find_by(id: session[:user_id])
+      session[:user_id] = nil
     end
     
     def target_user
@@ -24,8 +26,6 @@ class ApplicationController < ActionController::Base
     end
     
     def allow_proper_user
-      target_user
-      
       if @current_user != @target_user
         redirect_to("/")
       end

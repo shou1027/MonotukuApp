@@ -1,4 +1,4 @@
-<% provide(:title,"ユーザー詳細") %>
+<% provide(:title,@target_user.name) %>
 
 <div class="user-container">
   <div class="user-contents">
@@ -6,19 +6,23 @@
     <div class="user-main user-line">
       <div class="follow-main-container">
         <h1>フォロワー</h1>
-        <ul class="follow-user-list">
-          <% @users.each do |user| %>
-            <li>
-              <%= link_to("/users/#{user.name}") do %>
-                <%= image_tag("/user_images/#{user.image_name}") %>
-              <% end %>
-              <div class="follow-user-name">
-                <%= link_to(user.name,"/users/#{user.name}") %>
-              </div>
-            </li>
-          <% end %>
-        </ul>
-        <%= paginate @users %>
+        <% if !@users.blank? %>
+          <ul class="follow-user-list">
+            <% @users.each do |user| %>
+              <li>
+                <%= link_to("/users/#{user.name}") do %>
+                  <%= image_tag("/user_images/#{user.image_name}") %>
+                <% end %>
+                <div class="follow-user-name">
+                  <%= link_to(user.name,"/users/#{user.name}") %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+          <%= paginate @users %>
+        <% else %>
+          <p class="non-content">フォロワーが見つかりません</p>
+        <% end %>
       </div>
     </div>
   </div>

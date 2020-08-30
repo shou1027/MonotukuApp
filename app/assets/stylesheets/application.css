@@ -33,6 +33,10 @@ h1,h2{
   margin: 0;
 }
 
+h1{
+  font-size: 28px;
+}
+
 a{
   text-decoration: none;
 }
@@ -201,7 +205,7 @@ footer{
   height: 120px;
   overflow: hidden;
   margin: 0 auto;
-  padding-right: 50px;
+  padding-right: 20px;
   padding-left: 20px;
 }
 
@@ -242,6 +246,20 @@ footer{
 
 .footer-nav a:hover{
   background-color: #333;
+}
+
+.pagination a{
+  color: blue;
+}
+
+.current{
+  color: black;
+}
+
+.non-content{
+  font-size: 16px;
+  text-align: center;
+  padding: 20px 0;
 }
 
 @media(max-width: 1000px){
