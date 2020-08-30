@@ -1,0 +1,1582 @@
+/* line 1, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-contents {
+  max-width: 1500px;
+  margin: 20px auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+/* line 8, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-line {
+  float: left;
+}
+
+/* line 12, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-menu {
+  width: 200px;
+  padding-right: 20px;
+}
+
+/* line 17, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+#dropdown-click {
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px 0;
+  display: none;
+}
+
+/* line 26, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+#dropdown-menu {
+  display: block;
+}
+
+/* line 30, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-menu a {
+  width: 100%;
+  height: 40px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+}
+
+/* line 39, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-menu a:hover {
+  background-color: rgba(173, 255, 47, 0.6);
+}
+
+/* line 43, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-menu span {
+  padding-left: 20px;
+  font-weight: bold;
+}
+
+/* line 48, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-main {
+  width: calc(100% - 550px);
+  padding-right: 20px;
+}
+
+/* line 53, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-main-container {
+  background-color: white;
+  position: relative;
+}
+
+/* line 58, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-main-container h1 {
+  padding-left: 20px;
+}
+
+/* line 62, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-main-container ul {
+  overflow: hidden;
+}
+
+/* line 66, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-content {
+  width: 50%;
+  padding: 15px;
+  float: left;
+}
+
+/* line 72, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-img-container {
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+/* line 78, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-content a {
+  color: black;
+}
+
+/* line 82, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-content a:hover {
+  text-decoration: underline;
+}
+
+/* line 86, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-content img {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  object-fit: contain;
+  border: 1px solid #ddd;
+}
+
+/* line 96, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-content p {
+  font-size: 16px;
+  margin: 10px auto 0 auto;
+  width: 80%;
+  line-height: 1.2em;
+  color: black;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.4em;
+  word-wrap: break-word;
+}
+
+/* line 110, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-main-container nav {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* line 115, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-side {
+  width: 350px;
+}
+
+/* line 119, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-ranking {
+  background-color: white;
+  font-size: 14px;
+}
+
+/* line 124, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-ranking h2 {
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+/* line 129, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-ranking li {
+  border-top: 1px solid #aaa;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* line 137, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-ranking a {
+  width: calc(100% - 50px);
+  color: black;
+  display: block;
+  float: left;
+  word-wrap: break-word;
+}
+
+/* line 145, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-name-info {
+  display: flex;
+  width: calc(100% - 50px);
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* line 152, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-name-info a {
+  color: blue;
+}
+
+/* line 156, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-name-info a:hover {
+  text-decoration: underline;
+}
+
+/* line 160, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-name-info p {
+  padding-right: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #aaa;
+  width: 40px;
+  text-align: center;
+}
+
+/* line 169, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-num-info {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+/* line 175, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-ranking p {
+  margin: 0;
+  line-height: 1em;
+}
+
+/* line 180, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.home-category-ran {
+  margin-top: 20px;
+}
+
+/**********about**********/
+/* line 186, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.about-container {
+  padding: 100px 20px;
+  /*background-color: #77f;*/
+}
+
+/* line 191, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.about-contents {
+  text-align: center;
+  color: blue;
+}
+
+/* line 196, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.about-contents h1,
+.about-contents h2,
+.about-contents p {
+  display: block;
+  padding: 15px 0;
+}
+
+/* line 204, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.about-contents a {
+  background-color: green;
+  color: white;
+  margin: 50px 0;
+  padding: 15px 50px;
+  font-size: 20px;
+  display: inline-block;
+}
+
+/* line 213, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+.about-contents a:hover {
+  background-color: darkgreen;
+}
+
+@media (max-width: 1200px) {
+  /* line 219, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+  .home-main {
+    width: calc(100% - 200px);
+    padding-right: 0;
+  }
+
+  /* line 224, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+  .home-side {
+    width: 100%;
+    padding-top: 20px;
+    clear: both;
+  }
+}
+@media (max-width: 860px) {
+  /* line 232, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+  .home-line {
+    float: none;
+  }
+
+  /* line 236, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+  .home-menu {
+    margin-left: auto;
+    padding-right: 0;
+    position: relative;
+    width: 150px;
+    z-index: 1;
+  }
+
+  /* line 244, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+  #dropdown-click {
+    display: block;
+  }
+
+  /* line 248, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+  #dropdown-menu {
+    position: absolute;
+    top: 36px;
+    width: 100%;
+    display: none;
+    background-color: white;
+    border: 1px solid #aaa;
+  }
+
+  /* line 257, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+  .home-main {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  /* line 263, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/home.scss */
+  .home-content {
+    width: 100%;
+  }
+}
+/* line 1, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.search-contents {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* line 7, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.search-form {
+  padding: 0 0px;
+  overflow: hidden;
+}
+
+/* line 12, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.search-form input[type="text"] {
+  width: calc(100% - 85px);
+  height: 30px;
+  font-size: 18px;
+  display: block;
+  float: left;
+}
+
+/* line 20, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.search-form input[type="submit"] {
+  width: 80px;
+  height: 30px;
+  margin-left: 5px;
+  display: block;
+  float: left;
+}
+
+/* line 28, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.search-main {
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+/* line 33, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.search-main li {
+  float: left;
+  width: 33.3%;
+  padding: 10px;
+}
+
+/* line 39, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.search-main a {
+  color: black;
+}
+
+/* line 43, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.search-main a:hover {
+  text-decoration: underline;
+}
+
+/* line 47, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.search-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  border: 1px solid lightgray;
+}
+
+/* line 55, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.search-image img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* line 65, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.search-main p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.4em;
+  margin-top: 10px;
+  line-height: 1.2em;
+  word-wrap: break-word;
+}
+
+/* line 76, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.search-contents nav {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/**********new**********/
+/* line 83, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.post-contents {
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+/* line 89, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.post-main-image-container {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* line 95, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.post-main-image {
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+/* line 101, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+#post-image {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  object-fit: contain;
+  border: 1px solid lightgray;
+}
+
+/* line 111, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+#post-image-select {
+  width: 100px;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 118, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+#post-title {
+  width: 100%;
+  height: 50px;
+  font-size: 30px;
+}
+
+/* line 124, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+#post-tag {
+  width: 100%;
+  height: 30px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* line 131, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+#post-image-file {
+  display: none;
+}
+
+/* line 135, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.post-editor {
+  width: 100%;
+}
+
+/* line 139, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.post-contents textarea {
+  width: 100%;
+  height: 300px;
+  resize: none;
+  outline: none;
+  font-size: 18px;
+  line-height: 1.2em;
+  padding: 5px;
+  display: block;
+}
+
+/* line 150, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.post-contents input[type="submit"] {
+  margin: 10px 10px 10px auto;
+  display: block;
+  width: 80px;
+  height: 30px;
+  background-color: green;
+  border: none;
+  color: white;
+}
+
+/* line 160, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.post-contents input[type="submit"]:hover {
+  background-color: darkgreen;
+}
+
+/**********work**********/
+/* line 166, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-contents {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+}
+
+/* line 173, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-user-name {
+  color: blue;
+}
+
+/* line 177, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-user-name:hover {
+  text-decoration: underline;
+}
+
+/* line 181, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-contents h1 {
+  word-wrap: break-word;
+  line-height: 1.2em;
+  margin-top: 10px;
+}
+
+/* line 187, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-img-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* line 191, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-img-content {
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+/* line 197, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-img-content img {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  object-fit: contain;
+  border: 1px solid #ddd;
+}
+
+/* line 207, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-tags {
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+/* line 212, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-tags a {
+  color: #ddd;
+}
+
+/* line 216, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-tags span {
+  background-color: green;
+  padding: 2px 8px;
+  border-radius: 14px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  display: block;
+  float: left;
+}
+
+/* line 226, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-tags span:hover {
+  background-color: darkgreen;
+}
+
+/* line 230, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-content {
+  margin-top: 20px;
+  word-wrap: break-word;
+}
+
+/* line 235, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-like {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* line 240, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-like-wrapper {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  float: right;
+}
+
+/* line 248, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-like-gray {
+  display: block;
+  float: left;
+  padding-right: 3px;
+  color: gray;
+}
+
+/* line 255, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-like-black {
+  display: block;
+  float: left;
+  padding-right: 3px;
+  color: black;
+}
+
+/* line 262, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-like-red {
+  display: block;
+  float: left;
+  padding-right: 3px;
+  color: red;
+}
+
+/* line 269, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+.work-like span {
+  display: block;
+  float: left;
+  color: black;
+}
+
+@media (max-width: 1000px) {
+  /* line 276, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+  .search-main li {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  /* line 282, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/posts.scss */
+  .search-main li {
+    width: 100%;
+  }
+}
+/* line 1, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-contents {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+/* line 8, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-line {
+  float: left;
+}
+
+/* line 12, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-side {
+  width: 250px;
+}
+
+/* line 20, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-side h1 {
+  margin-top: 20px;
+}
+
+/* line 24, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-side h2 {
+  margin-top: 40px;
+}
+
+/* line 28, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-search-list {
+  overflow: hidden;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+}
+
+/* line 34, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-search-list li {
+  width: 20%;
+  height: 30px;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  float: left;
+}
+
+/* line 42, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-search-list a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: blue;
+}
+
+/* line 51, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-search-list a:hover {
+  text-decoration: underline;
+}
+
+/* line 55, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-main {
+  width: calc(100% - 250px);
+  padding-left: 20px;
+}
+
+/* line 64, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-user-list li {
+  overflow: hidden;
+  padding: 10px;
+  border-bottom: 1px solid #aaa;
+}
+
+/* line 70, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-user-list img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* line 77, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-user-list img,
+.index-user-name {
+  float: left;
+}
+
+/* line 83, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-user-name {
+  width: calc(100% - 50px);
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+/* line 89, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-user-name a {
+  color: blue;
+}
+
+/* line 93, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-user-name a:hover {
+  text-decoration: underline;
+}
+
+/* line 97, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.index-user-list nav {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/**********show**********/
+/* line 104, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-contents {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+/* line 111, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-line {
+  float: left;
+}
+
+/* line 115, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-side {
+  width: 400px;
+}
+
+/* line 119, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-side-container {
+  width: 100%;
+  background-color: white;
+  padding: 30px 20px 30px 20px;
+}
+
+/* line 125, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-view {
+  text-align: center;
+}
+
+/* line 133, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-view p {
+  margin-top: 10px;
+}
+
+/* line 137, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-side-container img {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* line 146, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-num-info {
+  padding: 40px 10px 0 10px;
+  overflow: hidden;
+}
+
+/* line 151, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-num {
+  width: 33.3%;
+  text-align: center;
+  float: left;
+}
+
+/* line 157, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-num a {
+  color: black;
+}
+
+/* line 161, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-num a:hover {
+  text-decoration: underline;
+}
+
+/* line 165, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-link-select a {
+  width: 100%;
+  display: block;
+  color: white;
+  margin-top: 30px;
+  padding: 3px 0;
+  text-align: center;
+}
+
+/* line 174, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-post-edit {
+  background-color: #77f;
+}
+
+/* line 178, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-post-edit:hover {
+  background-color: #55f;
+}
+
+/* line 182, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-follow {
+  background-color: #029fdd;
+}
+
+/* line 186, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-follow:hover {
+  background-color: #006dab;
+}
+
+/* line 190, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-unfollow {
+  background-color: red;
+}
+
+/* line 194, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-unfollow:hover {
+  background-color: darkred;
+}
+
+/* line 198, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-main {
+  width: calc(100% - 400px);
+  padding-left: 20px;
+}
+
+/* line 203, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-main-container {
+  height: 100%;
+  background-color: white;
+  padding: 20px 0px;
+}
+
+/* line 209, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-main-container h1 {
+  padding-left: 20px;
+}
+
+/* line 213, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-main-container ul {
+  overflow: hidden;
+}
+
+/* line 217, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-main-container li {
+  width: 50%;
+  padding: 15px;
+  float: left;
+}
+
+/* line 223, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-post-link {
+  color: black;
+}
+
+/* line 227, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-post-link:hover {
+  text-decoration: underline;
+}
+
+/* line 231, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-image {
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+/* line 237, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-image img {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: block;
+  position: absolute;
+  object-fit: contain;
+  border: 1px solid #ddd;
+}
+
+/* line 248, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-main-container p {
+  margin: 10px auto 0 auto;
+  width: 80%;
+  height: 2.4em;
+  color: black;
+  font-size: 16px;
+  line-height: 1.2em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+/* line 262, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-operation {
+  margin-top: 5px;
+}
+
+/* line 266, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-operation-link {
+  color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  float: right;
+}
+
+/* line 273, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-operation-edit {
+  background-color: green;
+}
+
+/* line 277, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-operation-edit:hover {
+  background-color: darkgreen;
+}
+
+/* line 281, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-operation-delete {
+  background-color: red;
+  margin-left: 5px;
+}
+
+/* line 286, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-operation-delete:hover {
+  background-color: darkred;
+}
+
+/* line 290, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.user-main-container nav {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/**********following**********/
+/* line 297, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.follow-main-container {
+  background-color: white;
+  padding: 20px 20px;
+}
+
+/* line 302, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.follow-user-list li {
+  overflow: hidden;
+  padding: 10px;
+  border-bottom: 1px solid #aaa;
+}
+
+/* line 308, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.follow-user-list img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* line 315, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.follow-user-list img,
+.follow-user-name {
+  float: left;
+}
+
+/* line 321, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.follow-user-name {
+  width: calc(100% - 50px);
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+/* line 327, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.follow-user-name a {
+  color: blue;
+}
+
+/* line 331, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.follow-user-name a:hover {
+  text-decoration: underline;
+}
+
+/* line 335, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.follow-user-list nav {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/**********login**********/
+/* line 342, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.login-contents {
+  margin: 100px auto;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+}
+
+/* line 349, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.login-form {
+  margin-top: 50px;
+}
+
+/* line 353, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.login-input {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* line 360, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.login-submit {
+  background-color: green;
+  border: none;
+  font-size: 16px;
+  padding: 5px 20px;
+  margin: 0 auto;
+  color: white;
+  display: block;
+}
+
+/* line 370, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.login-submit:hover {
+  background-color: darkgreen;
+}
+
+/**********signup**********/
+/* line 376, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.signup-contents {
+  margin: 100px auto;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+}
+
+/* line 383, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.signup-form {
+  margin-top: 50px;
+}
+
+/* line 387, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.signup-input {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* line 394, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.signup-submit {
+  background-color: green;
+  border: none;
+  font-size: 16px;
+  padding: 5px 20px;
+  margin: 0 auto;
+  color: white;
+  display: block;
+}
+
+/* line 404, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.signup-submit:hover {
+  background-color: darkgreen;
+}
+
+/**********edit**********/
+/* line 410, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-contents {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+}
+
+/* line 417, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-image-container {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* line 422, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-view {
+  text-align: center;
+}
+
+/* line 426, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-image {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+/* line 432, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-image img {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* line 442, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+#user-image-file {
+  display: none;
+}
+
+/* line 446, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+#user-image-select {
+  display: block;
+  margin: 20px auto;
+  height: 30px;
+  width: 100px;
+}
+
+/* line 453, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-tag {
+  margin-top: 20px;
+}
+
+/* line 457, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-tag input {
+  width: 100%;
+  height: 30px;
+}
+
+/* line 462, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-submit {
+  border: none;
+  background-color: green;
+  width: 80px;
+  height: 30px;
+  color: white;
+  display: block;
+  margin: 30px auto 0 auto;
+}
+
+/* line 472, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-submit:hover {
+  background-color: darkgreen;
+}
+
+/* line 476, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-worning {
+  margin-top: 80px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: lightgray;
+}
+
+/* line 484, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-worning p {
+  font-size: 20px;
+}
+
+/* line 488, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-worning a {
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-top: 10px;
+}
+
+/* line 498, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+.edit-worning a:hover {
+  background-color: darkred;
+}
+
+@media (max-width: 1100px) {
+  /**********show**********/
+  /* line 506, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+  .user-main-container li {
+    width: 50%;
+  }
+}
+@media (max-width: 860px) {
+  /**********show**********/
+  /* line 515, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+  .user-line {
+    float: none;
+  }
+
+  /* line 519, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+  .user-side {
+    width: 100%;
+  }
+
+  /* line 523, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+  .user-main {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  /* line 528, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+  .user-main-container li {
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  /* line 536, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+  .index-line {
+    float: none;
+  }
+
+  /* line 540, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+  .index-side {
+    width: 100%;
+  }
+
+  /* line 544, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+  .index-main {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+@media (max-width: 680px) {
+  /**********show**********/
+  /* line 554, /home/ec2-user/environment/Monotuku/app/assets/stylesheets/users.scss */
+  .user-main-container li {
+    padding: 15px 5px;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+body{
+  margin: 0;
+  background-color: rgb(245, 245, 245);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+ul{
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+h1,h2{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+p{
+  margin: 0;
+}
+
+header{
+  background-color: #77f;
+  position: relative;
+}
+
+.header-container{
+  max-width: 1200px;
+  height: 60px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.header-logo{
+  height: 100%;
+  display: block;
+  float: left;
+}
+
+.header-logo a{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.header-search{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 30px;
+  float: left;
+}
+
+.fa-search{
+  color: white;
+  display:none;
+}
+
+.header-search input{
+  max-width: 250px;
+  width: 500px;
+  height: 30px;
+  font-size: 14px;
+}
+
+.header-nav-container{
+  height: 100%;
+  float: right;
+}
+
+.header-nav-float{
+  height: 100%;
+}
+
+.header-menu{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.fa-bars{
+  color: white;
+  padding: 10px;
+  display: none;
+}
+
+.header-nav{
+  height: 100%;
+  float: right;
+}
+
+.header-nav li{
+  float: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header-nav a{
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.header-nav a:hover{
+  background-color: #44f;
+}
+
+.header-mypage-image{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-mypage-text{
+  display: none;
+  
+}
+
+.header-menu{
+  float: right;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/**********flash**********/
+
+.flash-float{
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.flash{
+  color: white;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.flash-success{
+  background-color: green;
+}
+
+.flash-danger{
+  background-color: red;
+}
+
+.flash-notice{
+  background-color: yellow;
+}
+
+.error-message p{
+  padding: 5px;
+  background-color: red;
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+/**********footer**********/
+
+footer{
+  background-color: #555;
+}
+
+.footer-container{
+  max-width: 1200px;
+  height: 120px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding-right: 50px;
+  padding-left: 20px;
+}
+
+.footer-logo{
+  height: 100%;
+  display: inline-block;
+}
+
+.footer-logo a{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  float: left;
+}
+
+.footer-nav{
+  height: 100%;
+  float: right;
+}
+
+.footer-nav li{
+  float: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.footer-nav a{
+  color: white;
+  display: block;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.footer-nav a:hover{
+  background-color: #333;
+}
+
+@media(max-width: 1000px){
+  .header-search-big{
+    display:block;
+  }
+  
+  .header-search input{
+    max-width: 250px;
+    width: 500px;
+    height: 30px;
+    font-size: 14px;
+    display: none;
+  }
+}
+
+@media(max-width: 800px){
+  .header-logo a{
+    font-size: 20px;
+  }
+  
+  .header-search-big{
+    display:none;
+  }
+  
+  .header-search-small{
+    display:block;
+  }
+  
+  .header-nav-float{
+  
+  }
+  
+  .fa-bars{
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .header-nav{
+    display: none;
+    height: auto;
+    width: 150px;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    z-index: 2;
+    float: none;
+    background-color: gray;
+  }
+  
+  .header-nav li{
+    display: block;
+    text-align: center;
+    float: none;
+  }
+  
+  .header-nav a{
+    margin: 0;
+    padding: 10px 0;
+    border-radius: 0px;
+  }
+  
+  .header-nav a:hover{
+    background-color: darkgray;
+  }
+  
+  .header-mypage-image{
+    display: none;
+  }
+  
+  .header-mypage-text{
+    display: inline;
+  }
+  
+  /**********footer*********/
+  
+  .footer-logo a{
+    font-size: 20px;
+  }
+  
+  .footer-nav{
+    font-size: 12px;
+  }
+}
