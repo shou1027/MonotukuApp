@@ -42,7 +42,8 @@
                 </li>
                 <li>
                   <%= link_to("/users/#{@current_user.name}") do %>
-                    <%= image_tag("/user_images/#{@current_user.image_name}") %>
+                    <%= image_tag("/user_images/#{@current_user.image_name}",class: "header-mypage-image") %>
+                    <div class="header-mypage-text">マイページ</div>
                   <% end %>
                 </li>
                 <li>

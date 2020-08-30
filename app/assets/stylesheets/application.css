@@ -51,7 +51,7 @@ header{
   height: 60px;
   overflow: hidden;
   margin: 0 auto;
-  padding-right: 50px;
+  padding-right: 20px;
   padding-left: 20px;
 }
 
@@ -125,7 +125,8 @@ header{
 
 .header-nav a{
   color: white;
-  display: block;
+  display: flex;
+  justify-content: center;
   margin-left: 10px;
   padding: 5px;
   border-radius: 5px;
@@ -135,10 +136,16 @@ header{
   background-color: #44f;
 }
 
-.header-nav img{
+.header-mypage-image{
   width: 30px;
   height: 30px;
+  border-radius: 50%;
   object-fit: cover;
+}
+
+.header-mypage-text{
+  display: none;
+  
 }
 
 .header-menu{
@@ -161,7 +168,6 @@ header{
   color: white;
   padding: 5px;
   font-size: 20px;
-  
 }
 
 .flash-success{
@@ -265,22 +271,6 @@ footer{
     display:block;
   }
   
-  .header-nav{
-    font-size: 12px;
-  }
-  
-  /**********footer*********/
-  
-  .footer-logo a{
-    font-size: 20px;
-  }
-  
-  .footer-nav{
-    font-size: 12px;
-  }
-}
-
-@media(max-width: 860px){
   .header-nav-float{
   
   }
@@ -293,7 +283,7 @@ footer{
   .header-nav{
     display: none;
     height: auto;
-    width: 200px;
+    width: 150px;
     position: absolute;
     right: 0;
     top: 60px;
@@ -310,11 +300,29 @@ footer{
   
   .header-nav a{
     margin: 0;
-    padding: 5px 0;
+    padding: 10px 0;
     border-radius: 0px;
   }
   
   .header-nav a:hover{
     background-color: darkgray;
+  }
+  
+  .header-mypage-image{
+    display: none;
+  }
+  
+  .header-mypage-text{
+    display: inline;
+  }
+  
+  /**********footer*********/
+  
+  .footer-logo a{
+    font-size: 20px;
+  }
+  
+  .footer-nav{
+    font-size: 12px;
   }
 }

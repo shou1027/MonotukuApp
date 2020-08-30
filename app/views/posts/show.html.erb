@@ -21,20 +21,27 @@
     </div>
     <% if @current_user != @target_user %>
       <div class="work-like">
-        <% if @current_user.like?(@post) %>
-          <%= link_to("/likes/#{@target_user.name}/#{@post.id}/unlike",method: :post) do %>
-            <div class="work-like-wrapper">
-              <div class="fas fa-heart work-like-red"></div>
-              <span><%= 1 %></span>
-            </div>
+        <% if @current_user %>
+          <% if @current_user && @current_user.like?(@post) %>
+            <%= link_to("/likes/#{@target_user.name}/#{@post.id}/unlike",method: :post) do %>
+              <div class="work-like-wrapper">
+                <div class="fas fa-heart work-like-red"></div>
+                <span><%= @post.post_likes.count %></span>
+              </div>
+            <% end %>
+          <% else %>
+            <%= link_to("/likes/#{@target_user.name}/#{@post.id}/like",method: :post) do %>
+              <div class="work-like-wrapper">
+                <div class="fas fa-heart work-like-gray"></div>
+                <span><%= @post.post_likes.count %></span>
+              </div>
+            <% end %>
           <% end %>
         <% else %>
-          <%= link_to("/likes/#{@target_user.name}/#{@post.id}/like",method: :post) do %>
-            <div class="work-like-wrapper">
-              <div class="fas fa-heart work-like-gray"></div>
-              <span><%= @post.post_likes.count %></span>
-            </div>
-          <% end %>
+          <div class="work-like-wrapper">
+            <div class="work-like-black"><%= @post.post_likes.count %></div>
+            <span>いいね</span>
+          </div>
         <% end %>
       </div>
     <% end %>
