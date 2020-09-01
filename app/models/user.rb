@@ -15,9 +15,9 @@ class User < ApplicationRecord
   has_many :like_posts, through: :user_likes,  source: :post
   
   validates :name, {format: {with: /\A[a-z0-9]+\z/},presence:true,uniqueness:true,length: {maximum: 30}}
-  validates :password, {length: {minimum: 6, maximum: 30}}
   validates :tags, {length: {maximum: 100}}
   has_secure_password
+  validates :password, {length: {minimum: 6, maximum: 30}, allow_nil: true}
   
   # 現在のユーザーがフォローしてたらtrueを返す
   def follower?(other_user)

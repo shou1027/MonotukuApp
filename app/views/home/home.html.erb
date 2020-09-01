@@ -31,6 +31,9 @@
                   </div>
                   <p><%= post.title %></p>
                 <% end %>
+                <div class="user-like-view">
+                  <div><%= post.post_likes.count %> いいね</div>
+                </div>
               </li>
             <% end %>
           </ul>
@@ -48,14 +51,18 @@
             <% rank = 0 %>
             <% post_old = 100000 %>
             <% User.order(post_count: :desc).limit(10).each.with_index(1) do |user,i| %>
+              <%
+                if user.post_count == 0
+                  break
+                end
+              
+                if user.post_count < post_old
+                  rank = i
+                  post_old = user.post_count
+                end
+              %>
               <li>
                 <div class="home-name-info">
-                  <%
-                    if user.post_count < post_old
-                      rank = i
-                      post_old = user.post_count
-                    end
-                  %>
                   <p><%= rank %></p>
                   <%= link_to(user.name,"/users/#{user.name}") %>
                 </div>
@@ -75,14 +82,18 @@
             <% rank = 0 %>
             <% like_old = 100000 %>
             <% Post.order(like_count: :desc).limit(10).each.with_index(1) do |post,i| %>
+              <%
+                if post.like_count == 0
+                  break
+                end
+              
+                if post.like_count < like_old
+                  rank = i
+                  like_old = post.like_count
+                end
+              %>
               <li>
                 <div class="home-name-info">
-                  <%
-                    if post.like_count < like_old
-                      rank = i
-                      like_old = post.like_count
-                    end
-                  %>
                   <p><%= rank %></p>
                   <%= link_to(post.title,"/posts/#{post.user.name}/#{post.id}") %>
                 </div>

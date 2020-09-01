@@ -5,9 +5,9 @@
     <h1>ユーザー登録</h1>
     <div class="signup-form">
       <%= form_tag("/users/new") do %>
-        <p>ユーザー名</p>
+        <p>ユーザー名（半角英数字）</p>
         <input class="signup-input" name="name" type="text" value="<%= @user.name %>">
-        <p>パスワード</p>
+        <p>パスワード（6文字以上）</p>
         <input class="signup-input" name="password" type="password">
         <p>パスワード(確認)</p>
         <input class="signup-input" name="confirm" type="password">

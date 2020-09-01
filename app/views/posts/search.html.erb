@@ -8,25 +8,32 @@
         <input type="submit" value="検索">
       </form>
     </div>
-    <% if @search_count > 0 %>
-      <p><%= @search_count %>件の記事が見つかりました</p>
-    <% else %>
-      <p>お探しの記事は見つかりませんでした</p>
-    <% end %>
-    <div class="search-main">
-      <ul>
-        <% @posts.each do |post| %>
-          <li>
-            <%= link_to("/posts/#{post.user.name}/#{post.id}") do %>
-              <div class="search-image">
-                <%= image_tag("/post_images/#{post.image_name}") %>
+    <% if !@posts.nil? %>
+      <% if @search_count > 0 %>
+        <p><%= @search_count %>件の記事が見つかりました</p>
+      <% else %>
+        <p>お探しの記事は見つかりませんでした</p>
+      <% end %>
+      <div class="search-main">
+        <ul>
+          <% @posts.each do |post| %>
+            <li>
+              <%= link_to("/posts/#{post.user.name}/#{post.id}") do %>
+                <div class="search-image">
+                  <%= image_tag("/post_images/#{post.image_name}") %>
+                </div>
+                <p><%= post.title %></p>
+              <% end %>
+              <div class="search-like-view">
+                <div><%= post.post_likes.count %> いいね</div>
               </div>
-              <p><%= post.title %></p>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-    <%= paginate @posts %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <%= paginate @posts %>
+    <% else %>
+      <div class="search-main"></div>
+    <% end %>
   </div>
 </div>

@@ -21,6 +21,10 @@
                     <%= link_to("削除","/posts/#{@target_user.name}/#{post.id}/destroy",method: :post,class: "user-operation-delete user-operation-link") %>
                     <%= link_to("編集","/posts/#{@target_user.name}/#{post.id}/edit",class: "user-operation-edit user-operation-link") %>
                   </div>
+                <% else %>
+                  <div class="user-like-view">
+                    <div><%= post.post_likes.count %> いいね</div>
+                  </div>
                 <% end %>
               </li>
             <% end %>
