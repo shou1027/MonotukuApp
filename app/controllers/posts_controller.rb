@@ -27,6 +27,7 @@ class PostsController < ApplicationController
       @current_user.update(post_count: @current_user.posts.count)
       redirect_to("/")
     else
+      @message = @post
       @submit = "/posts/new"
       render("posts/new")
     end
@@ -56,6 +57,7 @@ class PostsController < ApplicationController
       end
       redirect_to("/")
     else
+      @message = @post
       @submit = "/posts/#{@target_user.name}/#{@post.id}/update"
       render("posts/new")
     end
