@@ -22,9 +22,9 @@ module HomeHelper
       tags = @current_user.tags.split(/ /)
       tags.each_with_index do |tag,i|
         if i == 0
-          posts = Post.where("tags LIKE ?","%#{tags[0]}%")
+          posts = Post.where("tags ILIKE ?","%#{tags[0]}%")
         else
-          posts = posts.or(Post.where("tags LIKE ?","%#{tag}%"))
+          posts = posts.or(Post.where("tags ILIKE ?","%#{tag}%"))
         end
       end
     end

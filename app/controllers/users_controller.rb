@@ -19,9 +19,9 @@ class UsersController < ApplicationController
     word = params[:word]
     if !word.blank?
       if word == "_"
-        @users = User.where("name LIKE ?","\\_%").order(name: :asc).page(params[:page]).per(30)
+        @users = User.where("name ILIKE ?","\\_%").order(name: :asc).page(params[:page]).per(30)
       else
-        @users = User.where("name LIKE ?","#{word}%").order(name: :asc).page(params[:page]).per(30)
+        @users = User.where("name ILIKE ?","#{word}%").order(name: :asc).page(params[:page]).per(30)
       end
     else
       @users = User.page(params[:page]).per(30)

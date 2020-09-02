@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if @word.blank?
       posts = nil
     else
-      posts = Post.where("title LIKE ?","%#{@word}%").or(Post.where("tags LIKE ?","%#{@word}%").or(Post.where("content LIKE ?","%#{@word}%")))
+      posts = Post.where("title ILIKE ?","%#{@word}%").or(Post.where("tags ILIKE ?","%#{@word}%").or(Post.where("content ILIKE ?","%#{@word}%")))
       @search_count = posts.count
       @posts = posts.page(params[:page]).per(30)
     end
