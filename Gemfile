@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 gem 'kaminari', '~> 0.17.0'
 gem 'bcrypt', '~> 3.1.7'
+gem 'carrierwave', '~> 2.0'
+gem 'fog-aws'
+gem 'dotenv-rails'
+gem 'faker'
 
 gem 'rails',        '5.1.6'
 gem 'puma',         '3.9.1'

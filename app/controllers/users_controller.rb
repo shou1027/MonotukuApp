@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(name: params[:name],password: params[:password], password_confirmation: params[:confirm], image_name: "default.jpg", tags: "", post_count: 0)
+    @user = User.new(name: params[:name],password: params[:password], password_confirmation: params[:confirm], tags: "", post_count: 0)
     
     if @user.save
       session[:user_id] = @user.id
@@ -70,37 +70,20 @@ class UsersController < ApplicationController
   end
   
   def update
-    user_image = params[:user_image]
-    if user_image
-      if (@target_user.image_name != "default.jpg") && File.exist?("public/user_images/#{@target_user.image_name}")
-        File.delete("public/user_images/#{@target_user.image_name}")
-      end
-      time = DateTime.now
-      @target_user.image_name = "#{@target_user.name + format("%02d%02d%02d",time.hour.to_s,time.minute.to_s,time.second.to_s)}.jpg"
-    end
+    image_name = params[:image_name]
+    tags = params[:tags].strip.gsub(/[\s　]+/," ")
     
-    @target_user.tags = params[:tags].strip.gsub(/[\s　]+/," ")
-    
-    if @target_user.save
-      if user_image
-        File.binwrite("public/user_images/#{@target_user.image_name}",user_image.read)
-      end
-      
+    if image_name ? @target_user.update(image_name: image_name, tags: tags) : @target_user.update(tags: tags)
       redirect_to("/users/#{@target_user.name}")
     else
       render("users/edit")
     end
-    
   end
   
   def destroy
-    if (@target_user.image_name != "default.jpg") & File.exist?("public/user_images/#{@target_user.image_name}")
-      File.delete("public/user_images/#{@target_user.image_name}")
-    end
     @target_user.destroy
     session[:user_id] = nil
     
     redirect_to("/about")
   end
-  
 end

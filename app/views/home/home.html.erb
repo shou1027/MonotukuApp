@@ -27,7 +27,7 @@
               <li class="home-content">
                 <%= link_to("/posts/#{post.user.name}/#{post.id}") do %>
                   <div class="home-img-container">
-                    <%= image_tag("/post_images/#{post.image_name}") %>
+                    <%= image_tag(post.image_name.url) %>
                   </div>
                   <p><%= post.title %></p>
                 <% end %>

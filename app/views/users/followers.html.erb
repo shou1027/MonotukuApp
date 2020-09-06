@@ -11,7 +11,7 @@
             <% @users.each do |user| %>
               <li>
                 <%= link_to("/users/#{user.name}") do %>
-                  <%= image_tag("/user_images/#{user.image_name}") %>
+                  <%= image_tag(user.image_name.url) %>
                 <% end %>
                 <div class="follow-user-name">
                   <%= link_to(user.name,"/users/#{user.name}") %>

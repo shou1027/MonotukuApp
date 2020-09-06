@@ -12,7 +12,7 @@
               <li>
                 <%= link_to("/posts/#{@target_user.name}/#{post.id}", class: "user-post-link") do %>
                   <div class="user-image">
-                    <%= image_tag("/post_images/#{post.image_name}") %>
+                    <%= image_tag(post.image_name.url) %>
                   </div>
                   <p><%= post.title %></p>
                 <% end %>

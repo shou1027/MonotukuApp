@@ -6,7 +6,8 @@
       <input id="post-title" name="post_title" type="text" placeholder="タイトル" value="<%= @post.title %>">
       <div class="post-main-image-container">
         <div class="post-main-image">
-          <img id="post-image" src="<%= "/post_images/#{@post.image_name}" %>">
+          
+          <%= image_tag(@post.image_name.url,id: "post-image") %>
         </div>
       </div>
       <input accept="image/png,image/gif,image/jpeg" id="post-image-file" name="post_image" type="file">

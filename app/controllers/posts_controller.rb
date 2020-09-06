@@ -19,11 +19,8 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post_image = params[:post_image]
-    @post = @current_user.posts.build(title: params[:post_title], tags: params[:post_tags].strip.gsub(/[\s　]+/," "), content: params[:post_content], like_count: 0)
-    @post.image_name = @post_image.blank? ? "" : @current_user.name + DateTime.now.strftime("%Y%m%d%H%M%S") + ".jpg"
+    @post = @current_user.posts.build(title: params[:post_title], image_name: params[:post_image], tags: params[:post_tags].strip.gsub(/[\s　]+/," "), content: params[:post_content], like_count: 0)
     if @post.save
-      File.binwrite("public/post_images/#{@post.image_name}", @post_image.read)
       @current_user.update(post_count: @current_user.posts.count)
       redirect_to("/")
     else
@@ -41,21 +38,13 @@ class PostsController < ApplicationController
   
   def update
     @post = @target_user.posts.find_by(id: params[:id])
-    @post_image = params[:post_image]
+    title = params[:post_title]
+    post_image = params[:post_image]
+    tags = params[:post_tags].strip.gsub(/[\s　]+/," ")
+    content = params[:post_content]
     
-    if @post_image
-      image_name_old = @post.image_name
-      @post.image_name = @post_image.blank? ? "" : @current_user.name + DateTime.now.strftime("%Y%m%d%H%M%S") + ".jpg"
-    end
-    
-    if @post.update(title: params[:post_title], tags: params[:post_tags].strip.gsub(/[\s　]+/," "), content: params[:post_content])
-      if @post_image
-        File.binwrite("public/post_images/#{@post.image_name}", @post_image.read)
-        if (image_name_old != "default.jpg") & File.exist?("public/post_images/#{image_name_old}")
-          File.delete("public/post_images/#{image_name_old}")
-        end
-      end
-      redirect_to("/")
+    if post_image ? @post.update(title: title, image_name: post_image, tags: tags, content: content) : @post.update(title: title, tags: tags, content: content)
+      redirect_to("/users/#{@target_user.name}")
     else
       @message = @post
       @submit = "/posts/#{@target_user.name}/#{@post.id}/update"
@@ -71,12 +60,8 @@ class PostsController < ApplicationController
   
   def destroy
     post = @target_user.posts.find_by(id: params[:id])
-    image_name_old = post.image_name
     if post.destroy
       @target_user.update(post_count: @target_user.posts.count)
-      if (image_name_old != "default.jpg") & File.exist?("public/post_images/#{image_name_old}")
-        File.delete("public/post_images/#{image_name_old}")
-      end
     end
     
     redirect_to("/users/#{@target_user.name}")

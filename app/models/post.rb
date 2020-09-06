@@ -6,7 +6,9 @@ class Post < ApplicationRecord
   has_many :like_users, through: :post_likes, source: :user
   #default_scope -> { order(created_at: :desc) }
   validates :title, {presence:true,length: {maximum: 100}}
-  validates :image_name, {presence:true}
+  validates :image_name, presence:true
   validates :tags, {length: {maximum: 100}}
   validates :content, {length: {maximum: 10000}}
+  
+  mount_uploader :image_name, ImageUploader
 end

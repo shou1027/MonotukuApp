@@ -6,7 +6,7 @@
     <h1><%= @post.title %></h1>
     <div class="work-img-container">
       <div class="work-img-content">
-        <%= image_tag("/post_images/#{@post.image_name}") %>
+        <%= image_tag(@post.image_name.url) %>
       </div>
     </div>
     <div class="work-tags">

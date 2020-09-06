@@ -6,10 +6,10 @@
       <div class="edit-view">
         <div class="edit-image-container">
           <div class="edit-image">
-            <%= image_tag("/user_images/#{@target_user.image_name}",id: "user-image") %>
+            <%= image_tag(@target_user.image_name.url,id: "user-image") %>
           </div>
         </div>
-        <input type="file" accept="image/png,image/gif,image/jpeg" id="user-image-file" name="user_image">
+        <input type="file" accept="image/png,image/gif,image/jpeg" id="user-image-file" name="image_name">
         <input type="button" id="user-image-select" value="画像を選択">
         <p><%= @target_user.name %></p>
       </div>

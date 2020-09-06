@@ -1,7 +1,7 @@
 <div class="user-side user-line">
   <div class="user-side-container">
     <div class="user-view">
-      <%= image_tag("/user_images/#{@target_user.image_name}") %>
+      <%= image_tag(@target_user.image_name.url) %>
       <p><%= @target_user.name %></p>
     </div>
     <div class="user-num-info">
